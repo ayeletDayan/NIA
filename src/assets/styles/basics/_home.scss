@@ -1,28 +1,35 @@
 .home{
-    background: linear-gradient(to bottom, $clr7 0%,$clr7 50%, rgba($clr7, 0) 100%);
     margin: auto;
     text-align: center;
+
+    .home-up{
+        background-color: $clr5;
+    }
         
     img{
         margin-top: 2em;
         max-width: 1100px;        
         border-radius: 25px;
-        box-shadow: 2px 2px 2px 2px $clr8;    }
+        // box-shadow: 2px 2px 2px 2px $clr5;
+        }
 
     .explore-location{
-        margin-top: 20px;     }
+        margin-top: 20px;
+        background-color: $clr6;
+    
+    }
 
     .explore-location img{
         max-width: 200px;
         max-height: 300px;
         border-radius: 25px;
-        box-shadow: 2px 2px 2px 2px $clr8;
+        // box-shadow: 2px 2px 2px 2px $clr5;
         margin: 12px;
     }
     .host img{
         max-width: 1100px;
         border-radius: 25px;
-        box-shadow: 2px 2px 2px 2px $clr8;
+        // box-shadow: 2px 2px 2px 2px $clr5;
         margin: 12px;
     }
 }

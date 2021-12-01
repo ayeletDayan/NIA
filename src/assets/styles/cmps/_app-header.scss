@@ -1,12 +1,13 @@
 header {   
     background-color: $clr5;
-    padding: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    
+    padding: 1rem;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    color: $clr6;
+    font-weight: bold;
+
     img{
-    width: 80px;
-    border-radius: 100%;
-    box-shadow: 2px 2px 2px 2px $clr3;
+        height: 30px;
+
     }
 
     .loggedin-user {
@@ -14,7 +15,7 @@ header {
         padding: 2px 8px;
         border-radius: 1em;
         align-self: flex-end;
-        color: whitesmoke;
+        color: $clr6;
         span{
             background-color: $clr2;
             padding: 4px;
@@ -29,20 +30,46 @@ header {
         flex-direction: row;
         justify-content: space-between;
         font-size: 1.3em;
-        font-variant: small-caps;
-        h2{
-            color: $clr2;
-            font-family: Georgia, 'Times New Roman', Times, serif; 
-            font-variant: normal;
-            text-shadow: 2px 2px 2px $clr6;
-            font-size: 1em;
-            margin: 0 0.5em 0;
+        padding: 0.7em;
+                
+        .logo {
+        color: $clr6;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        
+        .logo-txt{
+        align-self: center;
+        padding-left: 8px ;
         }
+        }
+
+        a{
+            color: $clr6;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 0.8rem;
+            
+        }
+
+        a:hover{
+            text-decoration: none;                      
+        }
+
+        .header-right{
+            a:hover{
+                border-radius: 22px;
+                background-color: $clr7;
+                height: 14px;           
+            }
+        }
+
+        
+        
     }
-    nav a {
-        padding: 0 5px;
-        margin: 10px;
-    }
+
     nav .active {
         color: $clr1;
     }

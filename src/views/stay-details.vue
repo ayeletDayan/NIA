@@ -7,6 +7,13 @@
         <img class="stay-img3" :src="stay.imgUrls[3]" />
         <img class="stay-img4" :src="stay.imgUrls[4]" />
     </div>
+
+    <i class='fas fa-cat' style='font-size:24px'></i>
+    <i class='far fa-snowflake' style='font-size:24px'></i>
+    <i class='fas fa-smoking-ban' style='font-size:24px'></i>
+    <i class='fas fa-utensils' style='font-size:24px'></i>
+    <i class='fas fa-wifi' style='font-size:24px'></i>
+    
   </section>
 
   <!-- Itzik -->
