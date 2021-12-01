@@ -1,0 +1,50 @@
+header {   
+    background-color: $clr5;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    img{
+    width: 80px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px 2px $clr3;
+    }
+
+    .loggedin-user {
+        background-color: $clr1;
+        padding: 2px 8px;
+        border-radius: 1em;
+        align-self: flex-end;
+        color: whitesmoke;
+        span{
+            background-color: $clr2;
+            padding: 4px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+    }
+    nav {
+        background-color: $clr5;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.3em;
+        font-variant: small-caps;
+        h2{
+            color: $clr2;
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+            font-variant: normal;
+            text-shadow: 2px 2px 2px $clr6;
+            font-size: 1em;
+            margin: 0 0.5em 0;
+        }
+    }
+    nav a {
+        padding: 0 5px;
+        margin: 10px;
+    }
+    nav .active {
+        color: $clr1;
+    }
+    
+}

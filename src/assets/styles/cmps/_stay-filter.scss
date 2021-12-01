@@ -1,0 +1,47 @@
+.main-filter-container .max-filter{
+    margin: auto;
+    font-size: .75rem;
+    border-radius: 40px;
+    padding: 1rem;
+    background-color: $clr6;     
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    gap: 1rem;
+    padding-left: 0.6rem;
+    font-weight: bold;
+    color: $clr3;
+    input{
+        border: none;
+        padding-top: 0.5rem;
+    }
+    
+
+    button{
+        margin: 0;
+        padding: 0.2rem;
+        margin-left: 0.2rem;
+        border-radius: 100%;
+
+        .fa-search{
+           color: $clr3;
+        }
+    }
+}
+
+.main-filter-container {
+        background-color: $clr5;
+        font-family: Georgia, 'Times New Roman', Times, serif;        
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 1rem;        
+    }
+.main-filter-container .max-filter label {
+            position: relative;
+            align-items: flex-start;
+            cursor: pointer;
+            margin-bottom: 1em;
+        }
+
+    
