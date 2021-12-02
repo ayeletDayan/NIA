@@ -5,10 +5,10 @@ export const stayStore = {
     state: {
         currStay: null,
         stays: [],
-        currStayReviews: {}
+        currStayReviews: [],
     },
     getters: {
-        showCurrStay(state){
+        showCurrStay(state) {
             return state.currStay;
         },
         stays(state) {
@@ -22,7 +22,16 @@ export const stayStore = {
         avgRate(state) {
             let sum = state.currStayReviews.reduce((sum, review) => {
                 sum += review.rate;
-            }, 0)
+            }, 0);
+            return sum / reviews.length;
+        },
+
+        avgStayRate(state) {
+            var reviews = state.currStay.reviews;
+            let sum = reviews.reduce((sum, review) => {
+                sum += review.rate;
+                return sum;
+            }, 0);
             return sum / reviews.length;
         },
     },
@@ -32,7 +41,6 @@ export const stayStore = {
         },
         setCurrStay(state, { stay }) {
             state.currStay = stay;
-            console.log(state.currStay);
         },
 
         addStay(state, { stay }) {
@@ -41,9 +49,9 @@ export const stayStore = {
         removeStay(state, { stayId }) {
             state.stays = state.stays.filter((stay) => stay._id !== stayId);
         },
-        setStayReviews(state,{ stay } ) {
+        setStayReviews(state, { stay }) {
             state.currStayReviews = stay.reviews;
-        }
+        },
     },
     actions: {
         async addStay(context, { stay }) {
@@ -79,41 +87,41 @@ export const stayStore = {
             }
         },
         async loadReviews(context, { stayId }) {
-                try {
-                    const stay = await stayService.getById(stayId);
-                    context.commit({ type: 'setStayReviews', stay });
-                    // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
-                    // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
-                    // //     console.log('Got stay from socket', stay);
-                    //     context.commit({ type: 'addStay', stay })
-                    // })
-                    // socketService.off(SOCKET_EVENT_REVIEW_ABOUT_YOU)
-                    // socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, stay => {
-                    //     console.log('Stay about me!', stay);
+            try {
+                const stay = await stayService.getById(stayId);
+                context.commit({ type: 'setStayReviews', stay });
+                // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
+                // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
+                // //     console.log('Got stay from socket', stay);
+                //     context.commit({ type: 'addStay', stay })
+                // })
+                // socketService.off(SOCKET_EVENT_REVIEW_ABOUT_YOU)
+                // socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, stay => {
+                //     console.log('Stay about me!', stay);
 
-                    // })
-                } catch (err) {
-                    console.log('stayStore: Error in loadReviews', err);
-                    throw err;
-                }
-            },
-        async loadStays(context, { filterBy }) {
-                try {
-                    const stays = await stayService.query(filterBy);
-                    context.commit({ type: 'setStays', stays });
-                } catch (err) {
-                    console.log('stayStore: Error in loadStays', err);
-                    throw err;
-                }
-            },
-        async removeStay(context, { stayId }) {
-                try {
-                    await stayService.remove(stayId);
-                    context.commit({ type: 'removeStay', stayId });
-                } catch (err) {
-                    console.log('stayStore: Error in removeStay', err);
-                    throw err;
-                }
-            },
+                // })
+            } catch (err) {
+                console.log('stayStore: Error in loadReviews', err);
+                throw err;
+            }
         },
-    };
+        async loadStays(context, { filterBy }) {
+            try {
+                const stays = await stayService.query(filterBy);
+                context.commit({ type: 'setStays', stays });
+            } catch (err) {
+                console.log('stayStore: Error in loadStays', err);
+                throw err;
+            }
+        },
+        async removeStay(context, { stayId }) {
+            try {
+                await stayService.remove(stayId);
+                context.commit({ type: 'removeStay', stayId });
+            } catch (err) {
+                console.log('stayStore: Error in removeStay', err);
+                throw err;
+            }
+        },
+    },
+};
