@@ -63,10 +63,20 @@ async function createStays() {
             {
               "id": "r101",
               "txt": "Very helpful hosts. Cooked traditional...",
-              "rate": 4,
+              "rate": 9,
               "by": {
                 "_id": "u102",
                 "fullname": "user2",
+                "imgUrl": "https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
+              }
+            },
+            {
+              "id": "r102",
+              "txt": "ok, could be better...",
+              "rate": 5,
+              "by": {
+                "_id": "u105",
+                "fullname": "user32",
                 "imgUrl": "https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
               }
             }
@@ -108,7 +118,7 @@ async function createStays() {
             {
               "id": "r101",
               "txt": "Very helpful hosts. Cooked traditional...",
-              "rate": 4,
+              "rate": 3,
               "by": {
                 "_id": "u102",
                 "fullname": "user2",
@@ -153,7 +163,7 @@ async function createStays() {
             {
               "id": "r101",
               "txt": "Very helpful hosts. Cooked traditional...",
-              "rate": 4,
+              "rate": 7,
               "by": {
                 "_id": "u102",
                 "fullname": "user2",

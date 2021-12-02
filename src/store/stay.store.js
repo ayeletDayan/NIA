@@ -19,12 +19,6 @@ export const stayStore = {
         //     console.log(filteredstays);
         //     return filteredstays
         // },
-        avgRate(state) {
-            let sum = state.currStayReviews.reduce((sum, review) => {
-                sum += review.rate;
-            }, 0);
-            return sum / reviews.length;
-        },
 
         avgStayRate(state) {
             var reviews = state.currStay.reviews;
