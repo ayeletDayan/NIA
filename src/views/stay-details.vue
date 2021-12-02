@@ -8,6 +8,7 @@
         <img class="stay-img4" :src="stay.imgUrls[4]" />
     </div>
   </section>
+  
 
   <!-- Itzik -->
 </template>
