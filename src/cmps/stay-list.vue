@@ -1,7 +1,7 @@
 <template>
   <div class="stay-list">
     <h1>hello list</h1>
-    <ul class="store-list-main grid">
+    <ul class="list-grid clean-list">
       <li v-for="stay in staysToShow" class="stay-list" :key="stay._id">
         <router-link :to="'/stay/' + stay._id">
           <stay-preview :stay="stay" />
