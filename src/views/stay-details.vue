@@ -1,14 +1,21 @@
 <template>
   <section v-if="stay">
     <h1>{{ stay.name }}</h1>
-    <div>
+    <div class="details-header">
       <div>
         <span>{{ avgStayRate }}</span
-        ><span>{{ stay.reviews.length }}</span
-        ><span>{{ stay.loc.city }}</span>
+        ><span> ({{ stay.reviews.length }} reviews) </span
+        ><span> {{ stay.loc.city }}</span>
       </div>
-      <div>
-        a
+      <div class="details-btns">
+        <label class="share-btn" @click="share">
+          <img class="icon-btn" src="@/assets/img/share.jpg" />
+          <button>Share</button>
+        </label>
+        <label class="share-btn" @click="save">
+          <img class="icon-btn" src="@/assets/img/heart.png" />
+          <button>Save</button>
+        </label>
       </div>
     </div>
     <div class="stay-details-container">
@@ -19,40 +26,67 @@
         :key="idx"
       />
     </div>
-    <!-- <div class="stay-details-container">
-      <img class="stay-img0" :src="stay.imgUrls[0]" />
-      <img class="stay-img1" :src="stay.imgUrls[1]" />
-      <img class="stay-img2" :src="stay.imgUrls[2]" />
-      <img class="stay-img3" :src="stay.imgUrls[3]" />
-      <img class="stay-img4" :src="stay.imgUrls[4]" />
-    </div> -->
-
-    <i class="fas fa-cat" style="font-size: 24px"></i>
-    <i class="far fa-snowflake" style="font-size: 24px"></i>
-    <i class="fas fa-smoking-ban" style="font-size: 24px"></i>
-    <i class="fas fa-utensils" style="font-size: 24px"></i>
-    <i class="fas fa-wifi" style="font-size: 24px"></i>
 
     <section>
       <div>
-        <div>description</div>
-        <div>eminities</div>
+        <div>{{ stay.summary }}</div>
+        <div>
+          <span>{{ stay.capacity }} guests</span><span> 2 bedrooms</span
+          ><span> 4 beds</span>
+        </div>
+
+        <hr />
+        <div>
+          <h2>What this place offers</h2>
+          <stay-amenity
+            v-for="item in stay.amenities"
+            :key="item"
+            :item="item"
+          />
+        </div>
       </div>
       <div>order box</div>
     </section>
-    <section>reviews</section>
-    <section>map</section>
+    <hr />
+    <section>{{ stay.reviews }}</section>
+    <hr />
+    <section>
+      <GmapMap
+        :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
+        :zoom="7"
+        map-type-id="terrain"
+        style="width: 500px; height: 300px"
+      >
+        <!-- <GmapMarker
+          :key="index"
+          v-for="(m, index) in markers"
+          :position="m.position"
+          :clickable="true"
+          :draggable="true"
+          @click="center = m.position"
+        /> -->
+      </GmapMap>
+    </section>
   </section>
 
   <!-- Itzik -->
 </template>
 
 <script>
+import stayAmenity from "@/cmps/stay-amenity";
 export default {
   data() {
     return {
       stay: null,
     };
+  },
+  methods: {
+    save() {
+      console.log("saved");
+    },
+    share() {
+      console.log("shared");
+    },
   },
   computed: {
     avgStayRate() {
@@ -75,10 +109,31 @@ export default {
       immediate: true,
     },
   },
+  components: {
+    stayAmenity,
+  },
 };
 
 // Todo - Itzik - page of stay - Shows details about the stay, allows booking and chat
 </script>
 
 <style>
+.icon-btn {
+  height: 16px;
+}
+button {
+  background-color: transparent;
+  border: none;
+  text-decoration-line: underline;
+}
+.share-btn {
+  display: flex;
+}
+.details-btns {
+  display: flex;
+}
+.details-header {
+  display: flex;
+  justify-content: space-between;
+}
 </style>
