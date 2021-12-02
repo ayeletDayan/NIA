@@ -1,0 +1,30 @@
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap:10px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    margin: 30px 0;
+    // padding: 10px;
+
+    img {
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    a {
+        text-decoration: none;
+        color: $clr7;
+    }
+   
+
+}
+
+.preview-text {
+    text-align: left;
+    line-height: 0.1rem;
+    margin: 10px 0;
+    h4 {
+        font-weight: normal;
+    }
+}

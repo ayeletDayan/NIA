@@ -1,24 +1,43 @@
 <template>
-    <section class="main-filter-container">
-      <div class="max-filter">
-        <div>
-        <div>Location </div>
-        <input name="address" id="location" type="search" placeholder="Where are you going?" value="London" />
-        </div>
-        <div for="check-in"><div>Check in </div>
-        <input id="check-in" placeholder="Add dates" value="" />
-        </div>
-        <div for="check-out"><div>Check out </div>
-        <input id="check-out" placeholder="Add dates" value="" />
-        </div>
-        <div class="guests" for="guests"><div><div>Guests </div>
-        <input id="guests" name="guests" placeholder="Add guests" value="1 guests" />
-        </div>
-        </div>
-        <button><a href="#/explore"><i class="fas fa-search"></i></a></button>        
-      </div>      
-    </section>
+  <section class="main-filter-container">
+    <div class="max-filter">
+      <div>
+        <div class="title">Location</div>
+        <div class="input">Where are you going?</div>
+      </div>
+      <div>
+        <div @click="datePicker = !datePicker" class="title">Check in</div>
+        <div @click="datePicker = !datePicker" class="input">Add dates</div>
+      </div>
+      <div>
+        <div @click="datePicker = !datePicker" class="title">Check out</div>
+        <div @click="datePicker = !datePicker" class="input">Add dates</div>
+      </div>
+      <div>
+        <div class="title">Guests</div>
+        <div class="input">Add Guests</div>
+      </div>
+      <button>
+        <a href="#/explore"><i class="fas fa-search"></i></a>
+      </button>
+    </div>
+
+    <div class="date-picker" v-if="datePicker">
+      <date-picker/>
+    </div>
+  </section>
 </template>
 <script>
-export default {};
+import datePicker from "./date-picker.vue";
+
+export default {
+  data() {
+    return {
+      datePicker: false,
+      date: ''
+    };
+  },
+  components: { datePicker },
+  computed: {},
+};
 </script>

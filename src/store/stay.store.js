@@ -86,25 +86,6 @@ export const stayStore = {
                 throw err;
             }
         },
-        async loadReviews(context, { stayId }) {
-            try {
-                const stay = await stayService.getById(stayId);
-                context.commit({ type: 'setStayReviews', stay });
-                // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
-                // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
-                // //     console.log('Got stay from socket', stay);
-                //     context.commit({ type: 'addStay', stay })
-                // })
-                // socketService.off(SOCKET_EVENT_REVIEW_ABOUT_YOU)
-                // socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, stay => {
-                //     console.log('Stay about me!', stay);
-
-                // })
-            } catch (err) {
-                console.log('stayStore: Error in loadReviews', err);
-                throw err;
-            }
-        },
         async loadStays(context, { filterBy }) {
             try {
                 const stays = await stayService.query(filterBy);
