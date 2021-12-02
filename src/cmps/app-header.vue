@@ -1,15 +1,15 @@
 <template>
   <header>
-    <nav>
-      <div>
-        <router-link to="/">
-          <img alt="logo" src="../assets/img/logo-bed.jpg" />
-          <h2>NIAb&b</h2>
-        </router-link>
-      </div>
+    <nav>                  
+        <router-link class="logo" to="/">
+        <div>
+        <img src="../assets/img/logo-cloud.jpg" alt="">
+        </div>        
+        <div class="logo-txt">niabnb</div>               
+        </router-link>     
       <div class="header-right">
-        <router-link to="/stay/edit/:id">Become a host</router-link> |
-        <router-link to="/stay">Explore</router-link> |
+        <router-link to="/stay">Explore</router-link>
+        <router-link to="/stay/edit/:id">Become a Host</router-link>       
         <router-link to="/login">Login/Signup</router-link>
       </div>
     </nav>
