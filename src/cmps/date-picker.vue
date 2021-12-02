@@ -1,7 +1,7 @@
 <template>
   <section class="date-picker">
     <div>
-      <date-picker v-model="time" range></date-picker>
+      <date-picker v-model="time" format="DD MMM YYYY" range @change="setDate"></date-picker>
     </div>
   </section>
 </template>
@@ -15,6 +15,11 @@ export default {
     return {
       time: null,
     };
+  },
+  methods:{
+    setDate(date, type){
+      console.log(date, type);
+    }
   },
   computed: {},
 };
