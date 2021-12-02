@@ -5,10 +5,10 @@ export const stayStore = {
     state: {
         currStay: null,
         stays: [],
-        currStayReviews: []
+        currStayReviews: [],
     },
     getters: {
-        showCurrStay(state){
+        showCurrStay(state) {
             return state.currStay;
         },
         stays(state) {
@@ -22,9 +22,17 @@ export const stayStore = {
         avgRate(state) {
             let sum = state.currStayReviews.reduce((sum, review) => {
                 sum += review.rate;
+            }, 0);
+            return sum / reviews.length;
+        },
+
+        avgStayRate(state) {
+            var reviews = state.currStay.reviews;
+            let sum = reviews.reduce((sum, review) => {
+                sum += review.rate;
                 return sum;
-            }, 0)
-            return sum / state.currStayReviews.length;
+            }, 0);
+            return sum / reviews.length;
         },
     },
     mutations: {
@@ -33,7 +41,6 @@ export const stayStore = {
         },
         setCurrStay(state, { stay }) {
             state.currStay = stay;
-            console.log(state.currStay);
         },
 
         addStay(state, { stay }) {
@@ -42,9 +49,9 @@ export const stayStore = {
         removeStay(state, { stayId }) {
             state.stays = state.stays.filter((stay) => stay._id !== stayId);
         },
-        setStayReviews(state,{ stay } ) {
+        setStayReviews(state, { stay }) {
             state.currStayReviews = stay.reviews;
-        }
+        },
     },
     actions: {
         async addStay(context, { stay }) {
@@ -79,24 +86,23 @@ export const stayStore = {
                 throw err;
             }
         },
-
         async loadStays(context, { filterBy }) {
-                try {
-                    const stays = await stayService.query(filterBy);
-                    context.commit({ type: 'setStays', stays });
-                } catch (err) {
-                    console.log('stayStore: Error in loadStays', err);
-                    throw err;
-                }
-            },
-        async removeStay(context, { stayId }) {
-                try {
-                    await stayService.remove(stayId);
-                    context.commit({ type: 'removeStay', stayId });
-                } catch (err) {
-                    console.log('stayStore: Error in removeStay', err);
-                    throw err;
-                }
-            },
+            try {
+                const stays = await stayService.query(filterBy);
+                context.commit({ type: 'setStays', stays });
+            } catch (err) {
+                console.log('stayStore: Error in loadStays', err);
+                throw err;
+            }
         },
-    };
+        async removeStay(context, { stayId }) {
+            try {
+                await stayService.remove(stayId);
+                context.commit({ type: 'removeStay', stayId });
+            } catch (err) {
+                console.log('stayStore: Error in removeStay', err);
+                throw err;
+            }
+        },
+    },
+};
