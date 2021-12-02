@@ -8,11 +8,15 @@
     </router-link>
     </div>    
     <div class="explore-location">
-      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_200,g_face/v1638304295/London/pexels-oleg-magni-1837591_mtowma.jpg" alt="" />
-      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_200,g_face/v1638307319/Paris/pexels-alex-azabache-4039924_pm8b22.jpg" alt="" />
-      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_200,g_face/v1638304324/New%20York/pexels-vlada-karpovich-4451427_xxasuw.jpg" alt="" />
-      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_200,g_face/v1638307521/Budapest/pexels-timi-keszthelyi-2350351_sunbyl.jpg" alt="" />
-      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/v1638345455/Jerusalem/jerusalem_bl5unz.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638304295/London/pexels-oleg-magni-1837591_mtowma.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638304324/New%20York/pexels-vlada-karpovich-4451427_xxasuw.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638307521/Budapest/pexels-timi-keszthelyi-2350351_sunbyl.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638345455/Jerusalem/jerusalem_bl5unz.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638305217/boats/pexels-nadi-lindsay-4874899_wrxfks.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638306558/castle/pexels-alesia-kozik-6022633_f6yxrk.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638307307/Paris/pexels-maria-orlova-4916534_jyewl6.jpg" alt="" />
+      <img src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_257,g_face/v1638306530/castle/pexels-jensen-r-1381729_cx2cet.jpg" alt="" />
+
     </div>
     <div class="host">
       <img src="../assets/img/host-home.jpg" alt="" />

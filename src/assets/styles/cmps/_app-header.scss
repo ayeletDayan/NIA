@@ -3,6 +3,7 @@ header {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     color: $clr6;
     font-weight: bold;
+    max-height: 80px;    
 
     img{
         height: 30px;
@@ -16,7 +17,7 @@ header {
         align-self: flex-end;
         color: $clr6;
         span{
-            background-color: $clr2;
+            background-color: $clr1;
             padding: 4px;
             margin: 10px;
             border-radius: 50%;
@@ -50,6 +51,9 @@ header {
             text-decoration: none;
             font-size: 14px;
             padding: 0.8rem;
+            font-weight: 600;
+            line-height: 18px;
+            letter-spacing: 0.04em
             
         }
 
@@ -58,15 +62,44 @@ header {
         }
 
         .header-right{
-            a:hover{
+            display: flex;
+            flex-direction: row;
+            .hover:hover{
                 border-radius: 22px;
                 background-color: $clr7;
                 height: 14px;           
             }
+        }     
+    }
+
+    .login-btn{
+        display: flex;
+        flex-direction: row;
+        background-color: $clr6;
+        border-radius: 50px;
+        color: $clr4;
+        padding: 0.2em;
+        margin: 0;
+
+        .bar{
+            align-self: center;
+            padding: 0.2em;
+            margin-left: 0.6em;
+            justify-content: space-between;        }
+
+        .user-img{
+            height: 31px;
         }
 
-        
-        
+        img{
+            border-radius: 50px;
+            align-self: center;
+            justify-self: center;
+            margin-bottom: 0;
+            // padding: 0.1em;
+            margin-left: 0.6em;
+            margin-right: 0.2em;
+        }
     }
 
     nav .active {

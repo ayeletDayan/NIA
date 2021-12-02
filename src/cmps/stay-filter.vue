@@ -1,37 +1,49 @@
 <template>
   <section class="main-filter-container">
     <div class="max-filter">
-      <div>
-        <div @click="location = !location" class="title">Location</div>
-        <div @click="location = !location" class="input">Where are you going?</div>
+      <div class="filter-hover location">
+        <div @click="location = !location" class="filter-title">Location</div>
+        <div @click="location = !location" class="filter-input">
+        Where are you going?
+        </div>
       </div>
-      <div>
-        <div @click="datePicker = !datePicker" class="title">Check in</div>
-        <div @click="datePicker = !datePicker" class="input">{{startDate}}</div>
+      <div class="filter-hover check-in">
+        <div @click="datePicker = !datePicker" class="filter-title">
+          Check in
+        </div>
+        <div @click="datePicker = !datePicker" class="filter-input">
+          {{ startDate }}
+        </div>
       </div>
-      <div>
-        <div @click="datePicker = !datePicker" class="title">Check out</div>
-        <div @click="datePicker = !datePicker" class="input">{{endDate}}</div>
+      <div class="filter-hover check-out">
+        <div @click="datePicker = !datePicker" class="filter-title">
+          Check out
+        </div>
+        <div @click="datePicker = !datePicker" class="filter-input">
+          {{ endDate }}
+        </div>
       </div>
-      <div>
-        <div @click="guests = !guests" class="title">Guests</div>
-        <div @click="guests = !guests" class="input">Add Guests</div>
+      <div class="filter-hover guests">
+        <div>
+          <div @click="guests = !guests" class="filter-title">Guests</div>
+          <div @click="guests = !guests" class="filter-input">Add Guests</div>
+        </div>
+        <button class="explore">
+          <a href="#/explore"><i class="fas fa-search"></i></a>
+        </button>
       </div>
-      <button>
-        <a href="#/explore"><i class="fas fa-search"></i></a>
-      </button>
     </div>
-
-    <div class="date-picker" v-if="datePicker">
-      <date-picker/>
-    </div>
-
+    <date-picker
+      v-if="datePicker"
+      @startDate="addStartDate"
+      @endDate="addEndDate"
+    />
     <div class="location" v-if="location">
-      <location/>
+      <location />
     </div>
 
     <div class="guests" v-if="guests">
-      <guests/>
+      <guests />
     </div>
   </section>
 </template>
@@ -45,17 +57,21 @@ export default {
     return {
       datePicker: false,
       location: false,
-      guests: false
+      guests: false,
+      startDate: "Add date",
+      endDate: "Add date",
     };
   },
   components: { datePicker, location, guests },
-  computed: {
-    startDate(){
-      return 'Add date'
+  methods: {
+    addStartDate(date) {
+      this.startDate = date ? date : "Add date";
     },
-    endDate(){
-      return 'Add date'
-    }
+    addEndDate(date) {
+      this.endDate = date ? date : "Add date";
+      this.datePicker = false;
+    },
   },
+  computed: {},
 };
 </script>
