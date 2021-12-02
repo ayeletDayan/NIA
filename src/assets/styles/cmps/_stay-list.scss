@@ -1,0 +1,16 @@
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap:10px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    margin: 30px 0;
+    // padding: 10px;
+
+    img {
+            max-width: 100%;
+            object-fit: cover;
+        }
+    
+
+}
