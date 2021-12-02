@@ -1,13 +1,13 @@
 <template>
   <section class="main-filter-container">
     <div class="max-filter">
-      <div class="filter-hover location">
+      <div class="filter-hover filter-location">
         <div @click="location = !location" class="filter-title">Location</div>
         <div @click="location = !location" class="filter-input">
         Where are you going?
         </div>
       </div>
-      <div class="filter-hover check-in">
+      <div class="filter-hover filter-check-in">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check in
         </div>
@@ -15,7 +15,7 @@
           {{ startDate }}
         </div>
       </div>
-      <div class="filter-hover check-out">
+      <div class="filter-hover filter-check-out">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check out
         </div>
@@ -23,12 +23,12 @@
           {{ endDate }}
         </div>
       </div>
-      <div class="filter-hover guests">
+      <div class="filter-hover filter-guests">
         <div>
           <div @click="guests = !guests" class="filter-title">Guests</div>
-          <div @click="guests = !guests" class="filter-input">Add Guests</div>
+          <div @click="guests = !guests" class="filter-input">Add guests</div>
         </div>
-        <button class="explore">
+        <button class="filter-explore">
           <a href="#/explore"><i class="fas fa-search"></i></a>
         </button>
       </div>

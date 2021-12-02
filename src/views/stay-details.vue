@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay">
+  <section class="main-layout" v-if="stay">
     <h1>{{ stay.name }}</h1>
     <div class="details-header">
       <div>
@@ -27,7 +27,7 @@
       />
     </div>
 
-    <section>
+    <section class="main-layout">
       <div>
         <div>{{ stay.summary }}</div>
         <div>
@@ -50,7 +50,7 @@
     <hr />
     <section>{{ stay.reviews }}</section>
     <hr />
-    <section>
+    <section class="main-layout">
       <GmapMap
         :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
         :zoom="7"

@@ -22,7 +22,7 @@
     width: 25%;
     text-align: left;    
 
-    &.location{
+    &.filter-location{
         padding-left: 1em;
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
@@ -35,7 +35,7 @@
         }
     }
 
-    &.check-in, &.check-out{
+    &.filter-check-in, &.filter-check-out{
         width: 30%;
         .filter-title{
             border-right: 1px solid $clr3;
@@ -45,7 +45,7 @@
         }
     }
 
-    &.guests{
+    &.filter-guests{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -62,7 +62,7 @@
     border-radius: 50px;
 }
 
-button.explore{
+button.filter-explore{
     align-self: center;
     padding: 0;
     width: 48px;

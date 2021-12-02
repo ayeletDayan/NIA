@@ -56,7 +56,7 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Oxford, London, UK",
-            "lat": -0.1420,
+            "lat": -0.14200,
             "lng": 51.5153
           },
           "reviews": [
@@ -156,7 +156,7 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Soho, London, UK",
-            "lat": -0.1369,
+            "lat": -0.13690,
             "lng": 51.5125
           },
           "reviews": [
