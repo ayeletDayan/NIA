@@ -1,4 +1,7 @@
-<template>
+<template class="main-layout">
+<section class="main-layout">
+
+</section>
   
 </template>
 

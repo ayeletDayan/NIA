@@ -56,8 +56,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Oxford, London, UK",
-            "lat": -0.14200,
-            "lng": 51.5153
+            "lng": -0.14200,
+            "lat": 51.5153
           },
           "reviews": [
             {
@@ -111,8 +111,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Camden, London, UK",
-            "lat": -0.19359,
-            "lng": 51.5276
+            "lng": -0.19359,
+            "lat": 51.5276
           },
           "reviews": [
             {
@@ -156,8 +156,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Soho, London, UK",
-            "lat": -0.13690,
-            "lng": 51.5125
+            "lng": -0.13690,
+            "lat": 51.5125
           },
           "reviews": [
             {
@@ -201,8 +201,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "London Bridge, London, UK",
-            "lat": -0.08765,
-            "lng": 51.5097
+            "lng": -0.08765,
+            "lat": 51.5097
           },
           "reviews": [
             {
@@ -246,8 +246,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -291,8 +291,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -336,8 +336,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -381,8 +381,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -426,8 +426,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.1160,
-            "lng": 47.6433
+            "lng": 19.1160,
+            "lat": 47.6433
           },
           "reviews": [
             {
@@ -471,8 +471,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -516,8 +516,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -561,8 +561,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -606,8 +606,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -651,8 +651,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -696,8 +696,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -741,8 +741,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -786,8 +786,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -831,8 +831,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -876,8 +876,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -921,8 +921,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -966,8 +966,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
