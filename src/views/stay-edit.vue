@@ -133,7 +133,7 @@
                 </div>
 
                 <div class="stay-feature-container-right">
-                  <h3>entire place</h3>
+                  <h3>Entire place</h3>
                   <h4>You'll have the place to yourself.</h4>
                 </div>
               </div>
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="stay-feature-container-right">
-                  <h3>dfdgsdg is a Superhost</h3>
+                  <h3>Puki is a Superhost</h3>
                   <h4>
                     Superhosts are experienced, highly rated hosts who are
                     committed to providing great stays for guests.

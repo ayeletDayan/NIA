@@ -2,8 +2,18 @@
     margin: auto;
     text-align: center;
 
-    .home-up{
+    .home-up-container{
         background-color: $clr5;
+        position: relative;
+        .home-up{
+            position: absolute;
+            bottom: 2rem;
+            left: 20%;
+            text-decoration: none;
+            color: $clr6;
+            font-weight: 600;
+            font-size: 50px;        
+        }
     }
         
     img{
@@ -55,3 +65,16 @@
         
     }
 }
+
+.questions-about-hosting-container{
+    position: relative;
+    .questions-about-hosting{
+        position: absolute;
+        top: 7rem;
+        left: 20%;
+        text-decoration: none;
+        color: $clr5;
+        font-weight: 600;
+        font-size: 50px;        
+    }
+} 
