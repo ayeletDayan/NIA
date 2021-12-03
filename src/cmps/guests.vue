@@ -21,32 +21,49 @@
       </div>
       <div class="guests-btns">
         <div>
-          <button class="guests-btn">+</button>
+          <button class="guests-btn" @click="add">+</button>
+          <span class="quantity">{{ quantity }}</span>
+          <button class="guests-btn" @click="reduce">-</button>
         </div>
         <div>
-          <button class="guests-btn">+</button>
+          <button class="guests-btn" @click="add">+</button>
+          <span class="quantity">{{ quantity }}</span>
+          <button class="guests-btn" @click="reduce">-</button>
         </div>
         <div>
-          <button class="guests-btn">+</button>
+          <button class="guests-btn" @click="add">+</button>
+          <span class="quantity">{{ quantity }}</span>
+          <button class="guests-btn" @click="reduce">-</button>
         </div>
         <div>
-          <button class="guests-btn">+</button>
+          <button class="guests-btn" @click="add">+</button>
+          <span class="quantity">{{ quantity }}</span>
+          <button class="guests-btn" @click="reduce">-</button>
         </div>
       </div>
       <div></div>
     </div>
-        <div class="guests-note">
-        If you're lucky enough to have more than 2 pets with you, be sure to let
-        your host know.
-      </div>
-  </div>  
+    <div class="guests-note">
+      If you're lucky enough to have more than 2 pets with you, be sure to let
+      your host know.
+    </div>
+  </div>
 </template>
 <script>
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      quantity: 0,
+    };
   },
-  computed: {},
+  methods: {
+    add() {
+      this.quantity++;
+    },
+    reduce() {
+      if (this.quantity) this.quantity--;
+    },
+  },
 };
 </script>
