@@ -25,12 +25,14 @@ header {
     }
     nav {
         background-color: $clr5;
+        align-self: center;
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-size: 1.3em;
         padding: 0.7em;
+        margin: 0;
                 
         .logo {
         color: $clr6;
@@ -52,8 +54,8 @@ header {
             font-size: 14px;
             padding: 0.8rem;
             font-weight: 600;
-            line-height: 18px;
-            letter-spacing: 0.04em
+            letter-spacing: 0.04em;
+            align-self: center;
             
         }
 
@@ -64,10 +66,12 @@ header {
         .header-right{
             display: flex;
             flex-direction: row;
+            margin: 0;
+            align-self: center;
+            justify-self: center;
             .hover:hover{
                 border-radius: 22px;
                 background-color: $clr7;
-                height: 14px;           
             }
         }     
     }

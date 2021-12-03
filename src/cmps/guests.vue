@@ -1,17 +1,51 @@
 <template>
-  <section class="guests">
-    <div>
-      guests!!!!!!!!!!!!!!
-    </div>  
-  </section>
+  <div class="guests-main-container">
+    <div class="guests-container">
+      <div class="guests-titles">
+        <div>
+          <div class="guests-title">Adults</div>
+          <div class="guests-note">Ages 13 or above</div>
+        </div>
+        <div>
+          <div class="guests-title">Children</div>
+          <div class="guests-note">Ages 2–12</div>
+        </div>
+        <div>
+          <div class="guests-title">Infants</div>
+          <div class="guests-note">Under 2</div>
+        </div>
+        <div>
+          <div class="guests-title">Pets</div>
+          <div class="guests-note bold">Bringing an assistance animal?</div>
+        </div>
+      </div>
+      <div class="guests-btns">
+        <div>
+          <button class="guests-btn">+</button>
+        </div>
+        <div>
+          <button class="guests-btn">+</button>
+        </div>
+        <div>
+          <button class="guests-btn">+</button>
+        </div>
+        <div>
+          <button class="guests-btn">+</button>
+        </div>
+      </div>
+      <div></div>
+    </div>
+        <div class="guests-note">
+        If you're lucky enough to have more than 2 pets with you, be sure to let
+        your host know.
+      </div>
+  </div>  
 </template>
 <script>
-
 export default {
-  components: {  },
+  components: {},
   data() {
-    return {
-    };
+    return {};
   },
   computed: {},
 };

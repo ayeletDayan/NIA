@@ -1,7 +1,59 @@
 .guests{
-    padding-top: 1em;
-    width: 100%;
-    text-align: center;
+    width: 45%;
     color: $clr5;
     background-color: $clr6;
+    border-radius: 30px;
+    margin-top: 1em;
+    font-size: 12px;
+    margin-left: 53%;
+    padding: 3em;
+    margin-right: 2em;
 }
+
+.guests-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;    
+}
+
+.guests-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+.guests-titles{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.guests-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;     
+}
+
+.guests-title{
+    font-size: 16px;
+    font-weight: 500; 
+}
+
+.guests-note{
+    font-size: 14px;
+    color: rgb(113, 113, 113);
+    &.bold{
+        text-decoration: underline;
+        color: $clr5;
+    }
+}
+
+button.guests-btn{
+    text-decoration: none;
+    border: 0.1px dashed rgb(176, 176, 176);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(113, 113, 113);
+}    
+
