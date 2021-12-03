@@ -1,10 +1,10 @@
 <template>
-  <div class="stay-list">
+  <div class="stay-list main-layout">
     <ul class="list-grid clean-list">
       <li v-for="stay in staysToShow" class="stay-list" :key="stay._id">
-        <router-link :to="'/stay/' + stay._id">
+        <div class="stay-card" @click.stop="goToDetails(stay._id)">
           <stay-preview :stay="stay" />
-        </router-link>
+        </div>
       </li>
     </ul>
   </div>
@@ -18,7 +18,11 @@ export default {
     return {
     };
   },
-  methods: {},
+  methods: {
+    goToDetails(stayId) {
+      this.$router.push('/stay/' + stayId);
+    }
+  },
   computed:{
     staysToShow() {
       console.log(this.$store.getters.stays)
@@ -30,5 +34,4 @@ export default {
   },
 };
 
-// Todo - Ayelet - List of stays
 </script>
