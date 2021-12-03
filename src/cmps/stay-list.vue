@@ -1,5 +1,5 @@
 <template>
-  <div class="stay-list">
+  <div class="stay-list main-layout">
     <ul class="list-grid clean-list">
       <li v-for="stay in staysToShow" class="stay-list" :key="stay._id">
         <div class="stay-card" @click.stop="goToDetails(stay._id)">

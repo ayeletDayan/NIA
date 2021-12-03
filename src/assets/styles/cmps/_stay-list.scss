@@ -1,6 +1,6 @@
 .list-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap:20px;
     grid-auto-flow: dense;
     justify-content: center;
@@ -43,20 +43,25 @@
 
 .preview-text {
     text-align: left;
-    line-height: 20px;
     margin: 10px 0;
+    p {
+        line-height: 4px;
+        letter-spacing: 0.02em;
+
+    }
 }
 
 .preview-rate {
     font-size: 14px;
     line-height: 18px;
-    padding:
 
-    
     span {
         color:$clr4; //rgb(113, 113, 113)
     }
     .star {
         color: #FF385C; //rgb(255, 56, 92)
+        font-size: 14px;
+
+
      }
 }
