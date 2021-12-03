@@ -48,7 +48,9 @@
       <div>order box</div>
     </section>
     <hr />
-    <section>{{ stay.reviews }}</section>
+    <stay-review v-for="review in stay.reviews"
+            :key="review.id"
+            :review="review" />
     <hr />
     <section class="main-layout">
       <GmapMap
@@ -74,12 +76,19 @@
 
 <script>
 import stayAmenity from "@/cmps/stay-amenity";
+import stayReview from "@/cmps/stay-review";
 export default {
   data() {
     return {
       stay: null,
     };
   },
+  // created: {
+  //   foo() {
+  //     console.log(stay.loc.lat);
+  //     console.log(stay.loc.lng);
+  //   },
+  // },
   methods: {
     save() {
       console.log("saved");
@@ -111,6 +120,7 @@ export default {
   },
   components: {
     stayAmenity,
+    stayReview,
   },
 };
 
