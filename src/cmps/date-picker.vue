@@ -1,6 +1,7 @@
 <template>
-  <section class="date-picker">
+  <section class="date-picker">       
     <div class="calendar">
+      <span>Add dates: </span> 
       <date-picker
         v-model="time"
         format="DD MMM YYYY"
