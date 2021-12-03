@@ -1,30 +1,30 @@
-import { storageService } from './async-storage.service'
-import { userService } from './user.service'
+import { storageService } from './async-storage.service';
+import { userService } from './user.service';
 
-const STAY_KEY = 'stays'
-// var gStays = query() || 
-createStays()
+const STAY_KEY = 'stays';
+// var gStays = query() ||
+createStays();
 
 export const stayService = {
-  add,
-  query,
-  remove,
-  getById
-}
+    add,
+    query,
+    remove,
+    getById,
+};
 
 function query() {
-  return storageService.query(STAY_KEY)
+    return storageService.query(STAY_KEY);
 }
 
 function remove(stayId) {
-  return storageService.delete(STAY_KEY, stayId)
+    return storageService.delete(STAY_KEY, stayId);
 }
 
 async function add(stay) {
-  // stay.byUser = userService.getLoggedinUser()
-  // stay.aboutUser = await userService.getById(stay.aboutUserId)
-  const addedStay = storageService.post(STAY_KEY, stay)
-  return addedStay
+    // stay.byUser = userService.getLoggedinUser()
+    // stay.aboutUser = await userService.getById(stay.aboutUserId)
+    const addedStay = storageService.post(STAY_KEY, stay);
+    return addedStay;
 }
 
 async function createStays() {
@@ -56,8 +56,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Oxford, London, UK",
-            "lat": -0.14200,
-            "lng": 51.5153
+            "lng": -0.14200,
+            "lat": 51.5153
           },
           "reviews": [
             {
@@ -111,8 +111,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Camden, London, UK",
-            "lat": -0.19359,
-            "lng": 51.5276
+            "lng": -0.19359,
+            "lat": 51.5276
           },
           "reviews": [
             {
@@ -156,8 +156,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "Soho, London, UK",
-            "lat": -0.13690,
-            "lng": 51.5125
+            "lng": -0.13690,
+            "lat": 51.5125
           },
           "reviews": [
             {
@@ -201,8 +201,8 @@ async function createStays() {
           "loc": {
             "city": "London",
             "address": "London Bridge, London, UK",
-            "lat": -0.08765,
-            "lng": 51.5097
+            "lng": -0.08765,
+            "lat": 51.5097
           },
           "reviews": [
             {
@@ -246,8 +246,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -291,8 +291,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -336,8 +336,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -381,8 +381,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.2360,
-            "lng": 47.4964
+            "lng": 19.2360,
+            "lat": 47.4964
           },
           "reviews": [
             {
@@ -426,8 +426,8 @@ async function createStays() {
           "loc": {
             "city": "Budapest",
             "address": "Budapest, Hungary",
-            "lat": 19.1160,
-            "lng": 47.6433
+            "lng": 19.1160,
+            "lat": 47.6433
           },
           "reviews": [
             {
@@ -471,8 +471,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -516,8 +516,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -561,8 +561,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -587,7 +587,7 @@ async function createStays() {
           "createdAt": 20180203072000,
           "name": "Life in Paris",
           "type": "apartment",
-          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307305/Paris/pexels-maria-orlova-4906510_djw0kr.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-john-tekeridis-1428348_ecxyee.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302854/beds/bed23_ouue4q.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307242/bathroom/pexels-max-vakhtbovych-8143713_ezcurp.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307591/kitchen/pexels-cleyder-duque-3637739_rxabep.jpg"],
+          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307304/Paris/pexels-leah-kelley-952586_n07jss.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-john-tekeridis-1428348_ecxyee.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302854/beds/bed23_ouue4q.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307242/bathroom/pexels-max-vakhtbovych-8143713_ezcurp.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307591/kitchen/pexels-cleyder-duque-3637739_rxabep.jpg"],
           "price": 100.00,
           "summary": "Boutique apartment in Paris",
           "capacity": 8,
@@ -606,8 +606,8 @@ async function createStays() {
           "loc": {
             "city": "Paris",
             "address": "Paris, France",
-            "lat": 2.3648,
-            "lng": 48.8629
+            "lng": 2.3648,
+            "lat": 48.8629
           },
           "reviews": [
             {
@@ -651,8 +651,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -696,8 +696,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -741,8 +741,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -786,8 +786,8 @@ async function createStays() {
           "loc": {
             "city": "New York",
             "address": "New York, USA",
-            "lat": -73.9611,
-            "lng": 40.7817
+            "lng": -73.9611,
+            "lat": 40.7817
           },
           "reviews": [
             {
@@ -831,8 +831,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -876,8 +876,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -902,7 +902,7 @@ async function createStays() {
           "createdAt": 20180203080000,
           "name": "Palace of Solomon",
           "type": "luxe",
-          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304886/New%20York/pexels-max-vakhtbovych-6969866_pajfoi.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304882/New%20York/pexels-max-vakhtbovych-7195598_dpjlgw.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302869/beds/bed8_ldjo3u.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307258/bathroom/pexels-max-vakhtbovych-6296924_wwntde.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351868/desk/pexels-content-pixie-2967810_wc6cdd.jpg"],
+          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307298/Paris/pexels-pixabay-53464_aoqprv.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304882/New%20York/pexels-max-vakhtbovych-7195598_dpjlgw.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302869/beds/bed8_ldjo3u.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307258/bathroom/pexels-max-vakhtbovych-6296924_wwntde.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351868/desk/pexels-content-pixie-2967810_wc6cdd.jpg"],
           "price": 290.00,
           "summary": "Luxurious holiday apartment in the center of Jerusalem",
           "capacity": 8,
@@ -921,8 +921,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -947,7 +947,7 @@ async function createStays() {
           "createdAt": 20180203080000,
           "name": "Life in the Holy City",
           "type": "apartment",
-          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302846/beds/bed14_h9be8a.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307243/bathroom/pexels-deeana-arts-2534572_f9kmq3.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351899/desk/pexels-pixabay-265004_rqjuru.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351868/desk/pexels-content-pixie-2967810_wc6cdd.jpg"],
+          "imgUrls": ["https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307304/Paris/pexels-deeana-arts-2565222_tvdeyy.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302846/beds/bed14_h9be8a.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307243/bathroom/pexels-deeana-arts-2534572_f9kmq3.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351899/desk/pexels-pixabay-265004_rqjuru.jpg", "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638351868/desk/pexels-content-pixie-2967810_wc6cdd.jpg"],
           "price": 180.00,
           "summary": "Boutique apartment in the old city of Jerusalem",
           "capacity": 8,
@@ -966,8 +966,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lat": 31.7779,
-            "lng": 35.2330
+            "lng": 31.7779,
+            "lat": 35.2330
           },
           "reviews": [
             {
@@ -989,18 +989,16 @@ async function createStays() {
         }
     ];
 
-    await storageService.postMany(STAY_KEY, stays)
-  }
-  return stays
-}
-catch(err) {
-console.log(err, 'error in createStays')
-}
+            await storageService.postMany(STAY_KEY, stays);
+        }
+        return stays;
+    } catch (err) {
+        console.log(err, 'error in createStays');
+    }
 }
 
 async function getById(stayId) {
-  const stay = await storageService.get(STAY_KEY, stayId)
-  // const user = await httpService.get(`user/${stayId}`)
-  return stay;
+    const stay = await storageService.get(STAY_KEY, stayId);
+    // const user = await httpService.get(`user/${stayId}`)
+    return stay;
 }
-

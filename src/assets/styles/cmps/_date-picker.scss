@@ -10,7 +10,7 @@
     align-content: center;
     align-self: center;
     justify-items: center;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; 
 
 }
 
@@ -24,4 +24,8 @@
     text-align: center;
     align-self: center;
     position: fixed;
+}
+
+.mx-icon-calendar {
+    display: none !important;
 }

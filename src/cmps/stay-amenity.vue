@@ -1,6 +1,6 @@
 <template>
   <section>
-    <img :src="symbol" alt="">
+    <img class="amenities-icons" :src="(symbol)" alt="" />
     <span>{{ item }}</span>
   </section>
 </template>
@@ -11,11 +11,11 @@ export default {
   computed: {
     symbol() {
       var symbol = "";
-      if (this.item === "TV") return symbol = "@/assets/img/tv.png";
-      if (this.item === "Wifi") return symbol = "@/assets/img/wifi.png";
-      if (this.item === "Kitchen") return symbol = "@/assets/img/kitchen.png";
-      if (this.item === "Smoking allowed") return symbol = "@/assets/img/smoking.png";
-      if (this.item === "Pets allowed") return symbol = "@/assets/img/paws.png";
+      if (this.item === "TV") symbol = "https://res.cloudinary.com/db0wqgy42/image/upload/v1638527053/logo/tv_cki4xg.png";
+      if (this.item === "Wifi") symbol = "https://res.cloudinary.com/db0wqgy42/image/upload/v1638527054/logo/wifi_qrznjr.png";
+      if (this.item === "Kitchen") symbol = "https://res.cloudinary.com/db0wqgy42/image/upload/v1638527052/logo/kitchen_ljppwj.png";
+      if (this.item === "Smoking allowed") symbol = "https://res.cloudinary.com/db0wqgy42/image/upload/v1638527052/logo/smoking_vbat2h.png";
+      if (this.item === "Pets allowed") symbol = "https://res.cloudinary.com/db0wqgy42/image/upload/v1638527050/logo/paws_d6fxll.png";
       return symbol;
     },
   },
@@ -23,4 +23,9 @@ export default {
 </script>
 
 <style>
+.amenities-icons{
+  height: 24px;
+  width: 24px;
+  margin-inline-end: 15px;
+}
 </style>
