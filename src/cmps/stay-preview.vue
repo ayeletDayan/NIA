@@ -1,11 +1,13 @@
 
 <template>
     <section class="stay-preview">
-        <el-carousel trigger="click" height="170px" :autoplay="false" :loop="false">
+    <div class="preview-crousel">
+        <el-carousel trigger="click" :height="height" :autoplay="false" :loop="false">
       <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl" >
-       <img :src="imgUrl" alt="" />
+       <img :src="imgUrl" alt="" ref="img"/>
       </el-carousel-item>
     </el-carousel>
+    </div>
       <!-- <img :src="stay.imgUrls[0]" alt="" /> -->
       <section class="preview-text">
         <div class="preview-rate">
@@ -14,11 +16,13 @@
           <!-- <p v-else-if="newStay&&!stay.reviews.length">⭐ New</p> -->
           <p v-else >No reviews yet</p>
         </div>
-        <p>{{ stay.type }}</p>
-        <p>{{ stay.name }}</p>
-        <p><strong>{{ stay.price }}$</strong> / night</p>
+        <div class="preview-details">
+        <p>{{ stay.type }} • {{stay.loc.city}}<br>
+        {{ stay.name }}<br>
+        <strong>{{ stay.price }}$</strong> / night</p>
         <!-- <p v-if="filterby.dates">{{totalPrice}}</p> -->    
         <!-- <p v-if="filterby.dates">{{dates}}</p> -->  
+        </div>
       </section>  
     </section>
 </template>
@@ -33,14 +37,57 @@ export default {
     return {
       avgRate: 0,
       currStay: this.stay,
-    };
+      isWide: true,
+      // isMid: false,
+      isNarrow: true
+    }
   },
   created() {
       this.$store.commit({ type: "setCurrStay", stay: this.currStay });
       this.avgRate = this.$store.getters.avgStayRate;
+      window.matchMedia('(min-width: 750px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
+      // window.matchMedia('(min-width: 850px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
+      window.matchMedia('(max-width: 750px)').addEventListener('change', this.handleNarrow);
+
+  },
+  mounted() {
+
   },
   methods: {
+    handleWide(mql) {
+      if (mql.matches) this.isWide = true;
+      else this.isWide = false;
+    },
+    handleMid(mql) {
+      if (mql.matches) this.isMid = true;
+      else this.isMid = false;
+    },
+    handleNarrow(mql) {
+      if (mql.matches) this.isNarrow = true;
+      else this.isNarrow = false;
+    }
   },
+  computed: {
+    height() {
+      console.log('wide', this.isWide)
+      console.log('mid', this.isMid)
+      console.log('narrow', this.isNarrow)
+
+      if (this.isWide) return "190px";
+      // else if (this.isMid) return "210px";
+      else if (this.isNarrow) return "300px";
+
+      // if (window.innerWidth > 1116) return "170px";
+      // else if (window.innerWidth > 500) return "550px";
+
+    }
+  },
+  watch: {
+
+  }
 
 
 }

@@ -1,16 +1,22 @@
 <template>
   <section class="main-layout" v-if="stay">
-    <h1>{{ stay.name }}</h1>
-    <div class="details-header">
-      <div>
-        <span><i class='fas fa-star' style='font-size:14px; color:rgb(255, 55, 92)'></i></span>
+    <h1 class="big-font">{{ stay.name }}</h1>
+    <div class="details-header align-center">
+      <div class="">
+        <span
+          ><i
+            class="fas fa-star"
+            style="font-size: 14px; color: rgb(255, 55, 92)"
+          ></i
+        ></span>
         <span> {{ avgStayRate }}</span
         ><span>
-          ({{ stay.reviews.length }}
-          <span class="underline">reviews</span> ) </span
-        ><span class="underline"> {{ stay.loc.city }}</span>
+          ({{ stay.reviews.length }} <span class="underline">reviews</span> )
+        </span>
+        <span class="dote"> · </span>
+        <span class="underline"> {{ stay.loc.city }}</span>
       </div>
-      <div class="details-btns">
+      <div class="details-btns flex align-center">
         <label class="share-btn" @click="share">
           <img class="icon-btn" src="@/assets/img/share.jpg" />
           <button>Share</button>
@@ -32,15 +38,17 @@
 
     <section class="main-layout">
       <div>
-        <div><h2>{{ stay.summary }}</h2></div>
         <div>
-          <span>{{ stay.capacity }} guests</span><span> 2 bedrooms</span
-          ><span> 4 beds</span>
+          <h2 class="big-font">{{ stay.summary }}</h2>
+        </div>
+        <div>
+          <span>{{ stay.capacity }} guests</span><span class="dote"> · </span><span> 2 bedrooms</span
+          ><span class="dote"> · </span><span> 4 beds</span>
         </div>
 
         <hr />
         <div>
-          <h2>What this place offers</h2>
+          <h2 class="big-font">What this place offers</h2>
           <stay-amenity
             v-for="item in stay.amenities"
             :key="item"
@@ -48,7 +56,7 @@
           />
         </div>
       </div>
-      <div>order box</div>
+      <div hidden>order box</div>
     </section>
     <hr />
     <stay-review
@@ -138,9 +146,10 @@ export default {
 }
 .icon-btn {
   height: 16px;
+  margin-inline-end: 8px;
 }
 button {
-  font-weight: 600;
+  font-weight: 400;
   background-color: transparent;
   border: none;
   text-decoration-line: underline;
@@ -149,18 +158,33 @@ button {
 }
 .share-btn {
   display: flex;
+  margin-inline-start: 8px;
+  margin-bottom: 0px;
 }
 .share-btn :hover {
   cursor: pointer;
 }
 .details-btns {
   display: flex;
+  margin-bottom: 0px;
 }
 .details-header {
   display: flex;
   justify-content: space-between;
 }
-.star{
+.star {
   background-color: rgb 255.55.92;
+}
+.big-font {
+  font-size: 22px;
+}
+
+.dote {
+  margin: 0 5px;
+}
+hr {
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+  color: rgb(221, 221, 221);
 }
 </style>

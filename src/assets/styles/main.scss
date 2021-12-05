@@ -2,11 +2,13 @@
 @import "setup/variables";
 @import "setup/functions";
 @import "setup/mixins";
+@import "setup/fonts";
 
 // Basics
 @import "basics/helpers";
 @import "basics/home";
 @import "basics/stay-edit";
+@import "basics/layout";
 
 // Components
 @import "cmps/stay-filter";
