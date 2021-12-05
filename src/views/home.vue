@@ -1,16 +1,11 @@
 <template>
-  <section>
-    <stay-filter />
+  <section>    
     <div class="home">
       <div class="home-up-container">
         <router-link to="/stay">
           <img
             src="https://res.cloudinary.com/db0wqgy42/image/upload/w_1500,ar_16:9,c_fill,g_auto,e_sharpen/v1638307303/Paris/pexels-rachel-claire-4825701_1_eafnh2.jpg"
-            alt=""
-          />
-          <div class="home-up">
-            <span>Not sure where to go? Perfect.</span>
-          </div>
+            /><span :class="showTxt" >Not sure where to go? Perfect.</span>
         </router-link>
       </div>
       <div class="explore-location main-layout">
@@ -149,16 +144,18 @@
 </template>
 
 <script>
-import stayFilter from "@/cmps/stay-filter";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      isScroll: false
+    };
   },
-  components: {
-    stayFilter,
+  computed: {
+    showTxt(){
+      return this.isScroll? "hidden" : "show"
+    }
   },
-  computed: {},
   created() {},
   methods: {},
 };

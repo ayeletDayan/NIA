@@ -1,12 +1,12 @@
 <template>
   <section class="date-picker">       
     <div class="calendar">
-      <span>Add dates: </span> 
       <date-picker
         v-model="time"
-        format="DD MMM YYYY"
+        format="DD MMM   "
         range
         @pick="setDate"
+        placeholder="Add date"
       ></date-picker>
     </div>
   </section>

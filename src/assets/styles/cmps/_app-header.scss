@@ -1,9 +1,9 @@
-header {   
-    background-color: $clr5;
+header { 
+ 
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     color: $clr6;
     font-weight: bold;
-    max-height: 100px;    
+    padding-bottom: 1rem;
 
     img{
         height: 30px;
@@ -24,23 +24,22 @@ header {
         }
     }
     nav {
-        background-color: $clr5;
         align-self: center;
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-size: 1.3em;
-        padding: 0.7em;
+        padding: 0.7em 0;
         margin: 0;
                 
         .logo {
-        color: $clr6;
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         font-size: 20px;
         display: flex;
         flex-direction: row;
         align-self: center;
+        padding: 0;
         
         .logo-txt{
         align-self: center;
@@ -49,18 +48,15 @@ header {
         }
 
         a{
-            color: $clr6;
             text-decoration: none;
             font-size: 14px;
             padding: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.04em;
             align-self: center;
-            
-        }
-
-        a:hover{
-            text-decoration: none;                      
+            &:last-of-type{
+                padding-inline-end: 0;
+            }
         }
 
         .header-right{
@@ -69,9 +65,16 @@ header {
             margin: 0;
             align-self: center;
             justify-self: center;
+
+            .hover{
+            align-self: center;
+            }
+
             .hover:hover{
+                color: $clr5;
                 border-radius: 22px;
-                background-color: $clr7;
+                background-color: rgba(128, 128, 128, 0.247);
+                text-decoration: none;
             }
         }     
     }

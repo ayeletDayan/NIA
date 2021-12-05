@@ -4,10 +4,9 @@
 
     .home-up-container{
         background-color: $clr5;
-        position: relative;
-        .home-up{
-            position: absolute;
-            bottom: 2rem;
+        span{
+            position: fixed;
+            top: 70%;
             left: 20%;
             text-decoration: none;
             color: $clr6;
@@ -17,7 +16,6 @@
     }
         
     img{
-        margin-top: 2em;
         max-width: 1100px;        
         border-radius: 25px;
         }
@@ -78,3 +76,11 @@
         font-size: 50px;        
     }
 } 
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}

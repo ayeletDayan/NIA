@@ -1,26 +1,26 @@
 <template>
-  <section class="main-filter-container">
+  <section class="main-filter-container" :style="bgc">
     <div class="max-filter">
       <div class="filter-hover filter-location">
         <div @click="location = !location" class="filter-title">Location</div>
         <div @click="location = !location" class="filter-input">
-        Where are you going?
+          Where are you going?
         </div>
       </div>
       <div class="filter-hover filter-check-in">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check in
         </div>
-        <div @click="datePicker = !datePicker" class="filter-input">
-          {{ startDate }}
+        <div class="filter-input">
+          <date-picker @startDate="addStartDate" />
         </div>
       </div>
       <div class="filter-hover filter-check-out">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check out
         </div>
-        <div @click="datePicker = !datePicker" class="filter-input">
-          {{ endDate }}
+          <div class="filter-input">
+            <date-picker @startDate="addStartDate" />
         </div>
       </div>
       <div class="filter-hover filter-guests">
@@ -32,18 +32,13 @@
           <a href="#/explore"><i class="fas fa-search"></i></a>
         </button>
       </div>
-    </div>
-    <date-picker
-      v-if="datePicker"
-      @startDate="addStartDate"
-      @endDate="addEndDate"
-    />
-    <div class="location" v-if="location">
-      <location />
-    </div>
+      <div class="location-container" v-if="location">
+        <location />
+      </div>
 
-    <div class="guests" v-if="guests">
-      <guests />
+      <div class="guests" v-if="guests">
+        <guests />
+      </div>
     </div>
   </section>
 </template>
@@ -72,6 +67,12 @@ export default {
       this.datePicker = false;
     },
   },
-  computed: {},
+  computed: {
+    bgc() {
+      return this.$route.name === "home"
+        ? "background-color: #000000"
+        : "background-color: #fff";
+    },
+  },
 };
 </script>

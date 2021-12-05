@@ -3,9 +3,12 @@
     <h1>{{ stay.name }}</h1>
     <div class="details-header">
       <div>
-        <span>{{ avgStayRate }}</span
-        ><span> ({{ stay.reviews.length }} reviews) </span
-        ><span> {{ stay.loc.city }}</span>
+        <span><i class='fas fa-star' style='font-size:14px; color:rgb(255, 55, 92)'></i></span>
+        <span> {{ avgStayRate }}</span
+        ><span>
+          ({{ stay.reviews.length }}
+          <span class="underline">reviews</span> ) </span
+        ><span class="underline"> {{ stay.loc.city }}</span>
       </div>
       <div class="details-btns">
         <label class="share-btn" @click="share">
@@ -29,7 +32,7 @@
 
     <section class="main-layout">
       <div>
-        <div>{{ stay.summary }}</div>
+        <div><h2>{{ stay.summary }}</h2></div>
         <div>
           <span>{{ stay.capacity }} guests</span><span> 2 bedrooms</span
           ><span> 4 beds</span>
@@ -48,16 +51,18 @@
       <div>order box</div>
     </section>
     <hr />
-    <stay-review v-for="review in stay.reviews"
-            :key="review.id"
-            :review="review" />
+    <stay-review
+      v-for="review in stay.reviews"
+      :key="review.id"
+      :review="review"
+    />
     <hr />
     <section class="main-layout">
       <GmapMap
         :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
-        :zoom="7"
+        :zoom="13"
         map-type-id="terrain"
-        style="width: 500px; height: 300px"
+        style="width: 1120px; height: 480px"
       >
         <!-- <GmapMarker
           :key="index"
@@ -128,16 +133,25 @@ export default {
 </script>
 
 <style>
+.underline {
+  text-decoration-line: underline;
+}
 .icon-btn {
   height: 16px;
 }
 button {
+  font-weight: 600;
   background-color: transparent;
   border: none;
   text-decoration-line: underline;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
 }
 .share-btn {
   display: flex;
+}
+.share-btn :hover {
+  cursor: pointer;
 }
 .details-btns {
   display: flex;
@@ -145,5 +159,8 @@ button {
 .details-header {
   display: flex;
   justify-content: space-between;
+}
+.star{
+  background-color: rgb 255.55.92;
 }
 </style>

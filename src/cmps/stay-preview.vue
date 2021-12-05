@@ -1,13 +1,13 @@
 
 <template>
     <section class="stay-preview">
-    <!-- <div class="preview-crousel"> -->
+    <div class="preview-crousel">
         <el-carousel trigger="click" :height="height" :autoplay="false" :loop="false">
       <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl" >
        <img :src="imgUrl" alt="" ref="img"/>
       </el-carousel-item>
     </el-carousel>
-    <!-- </div> -->
+    </div>
       <!-- <img :src="stay.imgUrls[0]" alt="" /> -->
       <section class="preview-text">
         <div class="preview-rate">
@@ -38,19 +38,19 @@ export default {
       avgRate: 0,
       currStay: this.stay,
       isWide: true,
-      isMid: false,
-      isNarrow: false
+      // isMid: false,
+      isNarrow: true
     }
   },
   created() {
       this.$store.commit({ type: "setCurrStay", stay: this.currStay });
       this.avgRate = this.$store.getters.avgStayRate;
-      window.matchMedia('(min-width: 1116px)').addEventListener('change', this.handleWide);
-      window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
-      window.matchMedia('(min-width: 850px)').addEventListener('change', this.handleWide);
-      window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
-      window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
-      window.matchMedia('(max-width: 580px)').addEventListener('change', this.handleNarrow);
+      window.matchMedia('(min-width: 750px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
+      // window.matchMedia('(min-width: 850px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
+      // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
+      window.matchMedia('(max-width: 750px)').addEventListener('change', this.handleNarrow);
 
   },
   mounted() {
@@ -76,9 +76,9 @@ export default {
       console.log('mid', this.isMid)
       console.log('narrow', this.isNarrow)
 
-      if (this.isWide) return "170px";
-      else if (this.isMid) return "210px";
-      else if (this.isNarrow) return "260px";
+      if (this.isWide) return "190px";
+      // else if (this.isMid) return "210px";
+      else if (this.isNarrow) return "300px";
 
       // if (window.innerWidth > 1116) return "170px";
       // else if (window.innerWidth > 500) return "550px";
