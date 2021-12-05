@@ -6,7 +6,7 @@
         background-color: $clr5;
         span{
             position: fixed;
-            top: 70%;
+            top: 90%;
             left: 20%;
             text-decoration: none;
             color: $clr6;
@@ -22,6 +22,7 @@
     
         h1{
             text-align: left;
+            margin-top: 60px;
         }
 
     .explore-locations{
@@ -66,6 +67,7 @@
 
 .questions-about-hosting-container{
     position: relative;
+    margin-top: 60px;
     .questions-about-hosting{
         position: absolute;
         top: 7rem;
@@ -74,6 +76,11 @@
         color: $clr5;
         font-weight: 600;
         font-size: 50px;        
+    }
+    img{
+        width: 100vw;
+        height: 80vh;
+        object-fit: cover;
     }
 } 
 

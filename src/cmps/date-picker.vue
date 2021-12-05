@@ -3,7 +3,7 @@
     <div class="calendar">
       <date-picker
         v-model="time"
-        format="DD MMM   "
+        format="DD MMM          "
         range
         @pick="setDate"
         placeholder="Add date"

@@ -12,7 +12,11 @@
 }
 
 .mx-input{
-    width: 90px;
-    height: 1.5rem;
+    width: 100px;
+    height: 1rem;
     border: none;
+    margin: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: none;
 }

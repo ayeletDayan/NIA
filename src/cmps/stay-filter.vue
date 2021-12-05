@@ -7,6 +7,7 @@
           Where are you going?
         </div>
       </div>
+              <div class="filter-space"></div>
       <div class="filter-hover filter-check-in">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check in
@@ -15,6 +16,7 @@
           <date-picker @startDate="addStartDate" />
         </div>
       </div>
+              <div class="filter-space"></div>
       <div class="filter-hover filter-check-out">
         <div @click="datePicker = !datePicker" class="filter-title">
           Check out
@@ -23,10 +25,12 @@
             <date-picker @startDate="addStartDate" />
         </div>
       </div>
+                <div class="filter-space"></div>
+
       <div class="filter-hover filter-guests">
         <div>
           <div @click="guests = !guests" class="filter-title">Guests</div>
-          <div @click="guests = !guests" class="filter-input">Add guests</div>
+          <div @click="guests = !guests" class="filter-input">{{AddGuests}}</div>
         </div>
         <button class="filter-explore">
           <a href="#/explore"><i class="fas fa-search"></i></a>
@@ -37,7 +41,7 @@
       </div>
 
       <div class="guests" v-if="guests">
-        <guests />
+        <guests @totalPers="totalPers"/>
       </div>
     </div>
   </section>
@@ -55,6 +59,7 @@ export default {
       guests: false,
       startDate: "Add date",
       endDate: "Add date",
+      AddGuests: "Add guests"
     };
   },
   components: { datePicker, location, guests },
@@ -66,6 +71,10 @@ export default {
       this.endDate = date ? date : "Add date";
       this.datePicker = false;
     },
+    totalPers(toatl){
+      console.log(toatl);
+      this.AddGuests = toatl
+    }
   },
   computed: {
     bgc() {

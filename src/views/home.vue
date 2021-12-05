@@ -4,8 +4,8 @@
       <div class="home-up-container">
         <router-link to="/stay">
           <img
-            src="https://res.cloudinary.com/db0wqgy42/image/upload/w_1500,ar_16:9,c_fill,g_auto,e_sharpen/v1638307303/Paris/pexels-rachel-claire-4825701_1_eafnh2.jpg"
-            /><span :class="showTxt" >Not sure where to go? Perfect.</span>
+            src="../assets/img/home-img.jpg"
+            />
         </router-link>
       </div>
       <div class="explore-location main-layout">
