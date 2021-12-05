@@ -15,14 +15,37 @@
     a {
         text-decoration: none;
         color: $clr7;
-    }
-   
+    }  
 
 }
 
+// .preview-crousel {
+//     height: 50%;
+// }
 .stay-card {
     cursor: pointer;
 }
+// @media (min-width: 500px) {
+//     .el-carousel-item {
+//         height: 550px;
+// }
+// }
+// @media (min-width: 740px) {
+//     .el-carousel-item {
+//         height: 200px;
+// }
+// }
+// @media (min-width: 1116px) {
+//         .el-carousel-item {
+//             height: 90;
+//     }
+// }
+
+// .el-carousel {
+//                 height: 190px;
+//         }
+
+
 .el-carousel__arrow {
     background-color: white !important;
     color: $clr7 !important;
@@ -42,10 +65,11 @@
 }
 
 .preview-text {
+    font-family: 'airbnb-book';
     text-align: left;
     margin: 10px 0;
-    p {
-        line-height: 4px;
+    .preview-details {
+        line-height: 20px;
         letter-spacing: 0.02em;
 
     }

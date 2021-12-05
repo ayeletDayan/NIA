@@ -79,6 +79,16 @@ async function createStays() {
                 "fullname": "user32",
                 "imgUrl": "https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
               }
+            },
+            {
+              "id": "r103",
+              "txt": "fine...",
+              "rate": 4,
+              "by": {
+                "_id": "u105",
+                "fullname": "user32",
+                "imgUrl": "https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
+              }
             }
           ],
           "likedByUsers": [{
