@@ -1,42 +1,40 @@
-.location{
-    max-width: 500px;
-    color: $clr5;
+.location-container {
     background-color: $clr6;
-    margin-left: 2rem;
-    border-radius: 20px;
-    height: 130px;
-    margin-top: 1em;
+    left: 100px;
     display: flex;
     flex-direction: column;
-    font-size: 12px;
-    gap: 30%;
-    padding-top: 2rem;
-    position: fixed;
-    left: 1rem;
-    top: 160px;
-    padding-right: 1rem;
-
-    .anywhere{
-     padding-left: 14px;   
-  }
+    position: absolute;
+    top: 150px;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
 }
-
-.flexible{
+.location-card{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    font-weight: 540;
-    color: rgb(111, 1, 156);
-    text-shadow: 0.4px 0.4px 0.4px rgb(198, 1, 126);
-    letter-spacing: 0.04em;
-    font-size: 18px;
-    padding-left: 1rem;
-
+    padding-top: 16px!important;
+    padding-bottom: 16px!important;
+    min-width: 330px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    grid-gap: 20px;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
     img{
-        height: 50%;
+        border-radius: 5px;
     }
+}
 
-    
-//    -webkit-text-fill-color: transparent !important;
-//     background: linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%);
+.location-card:hover{
+    background-color: $clr3;
+    border-radius: 50px;
+    width: 90%;
+    margin: auto;
+}
+
+.location-card:not(:last-child) {
+    border-bottom: 1px solid $clr3;
 }

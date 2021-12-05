@@ -1,12 +1,12 @@
 <template>
-  <section class="date-picker">       
+  <section class="date-picker">
     <div class="calendar">
       <date-picker
         v-model="time"
-        format="DD MMM          "
-        range
+        valueType="format"
+        format="DD MMM"
         @pick="setDate"
-        placeholder="Add date"
+        placeholder="Add Date"
       ></date-picker>
     </div>
   </section>
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       time: null,
-      startDate: null,
+      startDate: false,
       endDate: null,
       startInput: null,
       endInput: null,
@@ -28,19 +28,8 @@ export default {
   },
   methods: {
     setDate(input) {
-      if (!this.startDate) {
-        this.startInput = input;
-        this.startDate = input.toString();
-        this.$emit("startDate", this.startDate.slice(4, 10));
-      } else {
-        this.endInput = input;
-        this.endDate = input.toString();
-        this.$emit("endDate", this.endDate.slice(4, 10));
-        const days =
-          (this.endInput.getTime() - this.startInput.getTime()) /
-          (1000 * 3600 * 24);
-        console.log(days);
-      }
+      this.$emit("startDate", input);
+      this.$emit("endDate", input);
     },
   },
 };

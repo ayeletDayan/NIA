@@ -1,10 +1,11 @@
 header { 
- 
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     color: $clr6;
     font-weight: bold;
     padding-bottom: 1rem;
-
+    position: fixed;
+    width: 100%;
+    z-index: 10;
     img{
         height: 30px;
 
