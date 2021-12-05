@@ -3,7 +3,8 @@
     <h1>{{ stay.name }}</h1>
     <div class="details-header">
       <div>
-        <span>{{ avgStayRate }}</span
+        <span><i class='fas fa-star' style='font-size:14px; color:rgb(255, 55, 92)'></i></span>
+        <span> {{ avgStayRate }}</span
         ><span>
           ({{ stay.reviews.length }}
           <span class="underline">reviews</span> ) </span
@@ -31,7 +32,7 @@
 
     <section class="main-layout">
       <div>
-        <div>{{ stay.summary }}</div>
+        <div><h2>{{ stay.summary }}</h2></div>
         <div>
           <span>{{ stay.capacity }} guests</span><span> 2 bedrooms</span
           ><span> 4 beds</span>
@@ -158,5 +159,8 @@ button {
 .details-header {
   display: flex;
   justify-content: space-between;
+}
+.star{
+  background-color: rgb 255.55.92;
 }
 </style>
