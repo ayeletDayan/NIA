@@ -3,15 +3,18 @@
     color: $clr5;
     background-color: $clr6;
     margin-left: 2rem;
-    border-radius: 30px;
-    height: 160px;
+    border-radius: 20px;
+    height: 130px;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
     font-size: 12px;
     gap: 30%;
-    padding-top: 1em;
-    position: relative;
+    padding-top: 2rem;
+    position: fixed;
+    left: 1rem;
+    top: 160px;
+    padding-right: 1rem;
 
     .anywhere{
      padding-left: 14px;   
@@ -27,8 +30,11 @@
     text-shadow: 0.4px 0.4px 0.4px rgb(198, 1, 126);
     letter-spacing: 0.04em;
     font-size: 18px;
-    padding-left: 50px;
-    padding-right: 60px; 
+    padding-left: 1rem;
+
+    img{
+        height: 50%;
+    }
 
     
 //    -webkit-text-fill-color: transparent !important;

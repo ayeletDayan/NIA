@@ -2,12 +2,15 @@
     width: 45%;
     color: $clr5;
     background-color: $clr6;
-    border-radius: 30px;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    margin: auto;
+    border-radius: 20px;
     margin-top: 1em;
-    font-size: 12px;
-    margin-left: 53%;
-    padding: 3em;
-    margin-right: 2em;
+    padding-top: 2rem;
+    position: fixed;
+    right: 200px;
+    top: 160px;
 }
 
 .guests-main-container{
@@ -20,7 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 3em;
+    margin-right: 0;
 }
 
 .guests-titles{
@@ -37,6 +40,7 @@
 .guests-note{
     font-size: 14px;
     color: rgb(113, 113, 113);
+    padding-right: 2rem;
     &.bold{
         text-decoration: underline;
         color: $clr5;

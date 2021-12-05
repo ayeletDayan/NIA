@@ -1,31 +1,18 @@
 .date-picker{
-    margin: auto;
-    border-radius: 32px;
-    height: 350px;
-    width: 849.98px;
-    color: $clr5;
-    background-color: $clr6;
-    margin-top: 12px;
-    padding: 16px 32px;
-    align-content: center;
-    align-self: center;
-    justify-items: center;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; 
 
 }
 
-.calendar{
+.mx-datepicker-main{
     margin: auto;
-    text-align: center;
-}
-
-.max-calendar{
-    margin: auto;
-    text-align: center;
-    align-self: center;
-    position: fixed;
+    margin-top: 1rem;
 }
 
 .mx-icon-calendar {
-    display: none !important;
+    display: none;
+}
+
+.mx-input{
+    width: 90px;
+    height: 1.5rem;
+    border: none;
 }
