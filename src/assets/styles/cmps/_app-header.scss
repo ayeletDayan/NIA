@@ -88,6 +88,10 @@ header {
         color: $clr4;
         padding: 0.2em;
         margin: 0;
+        margin-left: 1rem;
+        border: 1px solid $clr3;
+        cursor: pointer;
+
 
         .bar{
             align-self: center;

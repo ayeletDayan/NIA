@@ -1,5 +1,4 @@
 <template>
-  <section class="main-filter-container" :style="bgc">
     <div class="max-filter">
       <div class="filter-hover filter-location">
         <div @click="isOnLocation = !isOnLocation" class="filter-title">
@@ -53,17 +52,17 @@
         <guests @totalPers="totalPers" />
       </div>
     </div>
-  </section>
 </template>
 <script>
 import datePicker from "./date-picker.vue";
 import location from "./location.vue";
 import guests from "./guests.vue";
-import {storageService} from "../services/async-storage.service.js"
+import { storageService } from "../services/async-storage.service.js";
 
 export default {
   data() {
     return {
+      isScroll: false,
       datePicker: false,
       isOnLocation: false,
       isOnGuests: false,
@@ -75,12 +74,12 @@ export default {
       persons: 0,
       pets: 0,
       searchData: {
-        "location": null,
-        "startDate": null,
-        "endDate": null,
-        "nights": 0,
-        "persons":0,
-        "pets": 0,
+        location: null,
+        startDate: null,
+        endDate: null,
+        nights: 0,
+        persons: 0,
+        pets: 0,
       },
     };
   },
@@ -89,9 +88,9 @@ export default {
     addStartDate(date) {
       this.startDate = date.getTime();
       const dataStr = date.toString();
-      this.searchData.startDate = dataStr.slice(4, 10)
+      this.searchData.startDate = dataStr.slice(4, 10);
     },
-    addEndDate(date) {      
+    addEndDate(date) {
       this.endDate = date.getTime();
       const dataStr = date.toString();
       this.searchData.endDate = dataStr.slice(4, 10);
@@ -103,7 +102,7 @@ export default {
       this.pets = total.pets;
     },
     selectedCity(selectedCity) {
-      this.selectedLocation = selectedCity;      
+      this.selectedLocation = selectedCity;
       this.isOnLocation = false;
     },
     search() {
@@ -118,14 +117,7 @@ export default {
       this.$store.commit({type: 'setCurrTrip', trip: this.searchData})
 
     },
-  },
-  computed: {
-    bgc() {
-      return this.$route.name === "home"
-        ? "background-color: #000000"
-        : "background-color: #fff";
-    },
-  },
+  }
 };
 </script>
 

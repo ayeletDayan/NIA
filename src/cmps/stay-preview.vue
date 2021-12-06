@@ -73,6 +73,13 @@ export default {
   },
   computed: {
     height() {
+<<<<<<< HEAD
+=======
+      // console.log('wide', this.isWide)
+      // console.log('mid', this.isMid)
+      // console.log('narrow', this.isNarrow)
+
+>>>>>>> 098f5d40504ba2123149434d66e5b3ab0560b817
       if (this.isWide) return "190px";
       // else if (this.isMid) return "210px";
       else if (this.isNarrow) return "300px";
