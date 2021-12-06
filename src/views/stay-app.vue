@@ -1,5 +1,6 @@
 <template>
 <div>
+  <p v-if="isLoading">Loading...</p>
     <stay-list></stay-list>
 </div>
   
@@ -12,6 +13,11 @@ export default {
 
     components: {
     stayList
+  },
+   computed: {
+     isLoading() {
+      return this.$store.getters.isLoading;
+    },
   },
 
 }

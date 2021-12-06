@@ -25,7 +25,7 @@ export default {
   },
   computed:{
     staysToShow() {
-      console.log(this.$store.getters.stays)
+      // console.log(this.$store.getters.stays)
       return this.$store.getters.stays;
     }
   },

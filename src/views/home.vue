@@ -117,7 +117,7 @@
               Boutique studio, Budapest
             </h6>
           </div>
-          <div class="explore-location" @click.stop="goToDetails('tyLCO')">
+          <div class="explore-location" @click.stop="goToDetails('mLviy')">
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
               alt=""
@@ -164,8 +164,11 @@ export default {
     goToDetails(stayId) {
       this.$router.push("/stay/" + stayId);
     },
-    goToStays(type, filterBy){
-      console.log("filterBy:", type, "filter:", filterBy);
+    goToStays(type, filter){
+      // console.log("filterBy:", type, "filter:", filter);
+      const filterBy = {type: type, filter: filter}
+      this.$store.dispatch({ type: "setFilter", filterBy});
+      this.$router.push("/stay/");
     }
   },
   computed: {
