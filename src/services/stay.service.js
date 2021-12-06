@@ -841,8 +841,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lng": 31.7779,
-            "lat": 35.2330
+            "lng": 35.2330,
+            "lat": 31.7779
           },
           "reviews": [
             {
@@ -886,8 +886,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lng": 31.7779,
-            "lat": 35.2330
+            "lng": 35.2330,
+            "lat": 31.7779
           },
           "reviews": [
             {
@@ -931,8 +931,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lng": 31.7779,
-            "lat": 35.2330
+            "lng": 35.2330,
+            "lat": 31.7779
           },
           "reviews": [
             {
@@ -976,8 +976,8 @@ async function createStays() {
           "loc": {
             "city": "Jerusalem",
             "address": "Jerusalem, Israel",
-            "lng": 31.7779,
-            "lat": 35.2330
+            "lng": 35.2330,
+            "lat": 31.7779
           },
           "reviews": [
             {

@@ -95,7 +95,7 @@ export default {
     },
     sumTotalPers(){
       const totalPers = this.quantityAdults + this.quantityChildren + this.quantityInfants;
-      this.$emit("totalPers", totalPers + ' + ' + this.quantityPets + ' pets');
+      this.$emit("totalPers", {totalPers: totalPers, pets: this.quantityPets});
     }
   },
 };

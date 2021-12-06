@@ -1,5 +1,8 @@
 <template>
-  <section class="stay-details main-layout" v-if="stay">
+  <section class="main-layout" v-if="stay">
+    <div class="stay-details" >
+
+   
     <h1 class="big-font">{{ stay.name }}</h1>
     <div class="details-header align-center">
       <div class="">
@@ -82,6 +85,7 @@
         /> -->
       </GmapMap>
     </section>
+     </div>
   </section>
 
   <!-- Itzik -->
@@ -142,7 +146,7 @@ export default {
 
 <style>
 .stay-details{
-  font-family: airbnb-book;
+  margin-top: 200px;
 }
 .underline {
   text-decoration-line: underline;
