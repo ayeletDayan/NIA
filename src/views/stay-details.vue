@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout" v-if="stay">
+  <section class="stay-details main-layout" v-if="stay">
     <h1 class="big-font">{{ stay.name }}</h1>
     <div class="details-header align-center">
       <div class="">
@@ -141,6 +141,9 @@ export default {
 </script>
 
 <style>
+.stay-details{
+  font-family: airbnb-book;
+}
 .underline {
   text-decoration-line: underline;
 }
