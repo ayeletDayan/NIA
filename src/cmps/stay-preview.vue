@@ -11,7 +11,7 @@
       <!-- <img :src="stay.imgUrls[0]" alt="" /> -->
       <section class="preview-text">
         <div class="preview-rate">
-          <p v-if="stay.reviews.length"><span class="star"><i class='fas fa-star' style='font-size:14px; color:rgb(255, 55, 92)'></i></span> {{avgRate}}<span> ({{stay.reviews.length}})</span></p>
+          <p v-if="stay.reviews.length"><span class="star"><i class='fas fa-star' style='font-size:12.5px; color:rgb(255, 55, 92)'></i></span><strong> {{avgRate}}</strong><span> ({{stay.reviews.length}} reviews) </span></p>
           <p v-else-if="stay.reviews.length < 3">❤ {{stay.reviews.length}} reviews</p>
           <!-- <p v-else-if="newStay&&!stay.reviews.length">⭐ New</p> -->
           <p v-else >No reviews yet</p>
@@ -19,7 +19,7 @@
         <div class="preview-details">
         <p>{{ stay.type }} • {{stay.loc.city}}<br>
         {{ stay.name }}<br>
-        <strong>{{ stay.price }}$</strong> / night</p>
+        <strong>${{ stay.price }}</strong> / night</p>
         <!-- <p v-if="filterby.dates">{{totalPrice}}</p> -->    
         <!-- <p v-if="filterby.dates">{{dates}}</p> -->  
         </div>
@@ -47,7 +47,8 @@ export default {
       this.avgRate = this.$store.getters.avgStayRate;
       window.matchMedia('(min-width: 750px)').addEventListener('change', this.handleWide);
       // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
-      // window.matchMedia('(min-width: 850px)').addEventListener('change', this.handleWide);
+      window.matchMedia('(max-width: 425px)').addEventListener('change', this.handleWide);
+      window.matchMedia('(min-width: 425px)').addEventListener('change', this.handleNarrow);
       // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
       // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
       window.matchMedia('(max-width: 750px)').addEventListener('change', this.handleNarrow);
@@ -61,10 +62,10 @@ export default {
       if (mql.matches) this.isWide = true;
       else this.isWide = false;
     },
-    handleMid(mql) {
-      if (mql.matches) this.isMid = true;
-      else this.isMid = false;
-    },
+    // handleMid(mql) {
+    //   if (mql.matches) this.isMid = true;
+    //   else this.isMid = false;
+    // },
     handleNarrow(mql) {
       if (mql.matches) this.isNarrow = true;
       else this.isNarrow = false;
@@ -72,16 +73,10 @@ export default {
   },
   computed: {
     height() {
-      console.log('wide', this.isWide)
-      console.log('mid', this.isMid)
-      console.log('narrow', this.isNarrow)
-
       if (this.isWide) return "190px";
       // else if (this.isMid) return "210px";
       else if (this.isNarrow) return "300px";
 
-      // if (window.innerWidth > 1116) return "170px";
-      // else if (window.innerWidth > 500) return "550px";
 
     }
   },
