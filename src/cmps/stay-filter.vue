@@ -113,7 +113,7 @@ export default {
       this.searchData.persons = this.persons;
       this.searchData.pets = this.pets;
       console.log("searchData:", this.searchData);
-      storageService.post("search", this.searchData);
+      storageService.save("search", this.searchData);
     },
   },
   computed: {
