@@ -66,3 +66,19 @@ button.guests-btn{
 
 }    
 
+.guests-order-box {
+    width: 100%;
+    color: $clr5;
+    background-color: $clr6;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 0;
+    padding-top: 2rem;
+    position: absolute;
+    right: 100px;
+    top: 150px;
+    z-index: 1000000;
+}
+

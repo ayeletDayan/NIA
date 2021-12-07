@@ -30,7 +30,7 @@
         </label>
       </div>
     </div>
-    <div class="stay-details-container">
+    <div class="stay-details-imgs-container main-layout">
       <img
         v-for="(img, idx) in stay.imgUrls"
         :class="'stay-img' + idx"
@@ -38,8 +38,9 @@
         :key="idx"
       />
     </div>
-
-    <section class="main-layout">
+<section class="main-details-container main-layout">
+  <section class="flex">
+    <section class="text-details">
       <div>
         <div>
           <h2 class="big-font">{{ stay.summary }}</h2>
@@ -59,7 +60,21 @@
           />
         </div>
       </div>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      </section>
+      <section class="order-form-cmp">
       <stay-order-form :stayId="stay._id"></stay-order-form>
+      </section>
+      </section>
     </section>
     <hr />
     <stay-review
@@ -68,7 +83,7 @@
       :review="review"
     />
     <hr />
-    <section class="main-layout">
+    <section class="main-layout map">
       <GmapMap
         :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
         :zoom="13"
@@ -127,7 +142,7 @@ export default {
           const stayId = this.$route.params.id;
           await this.$store.dispatch({ type: "loadStay", stayId });
           this.stay = JSON.parse(
-            JSON.stringify(this.$store.getters.showCurrStay)
+            JSON.stringify(this.$store.getters.currStay)
           );
         } catch (err) {
           console.log(err);

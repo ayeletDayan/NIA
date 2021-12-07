@@ -1,37 +1,53 @@
 
 <template>
-    <section class="stay-preview">
+  <section class="stay-preview">
     <div class="preview-crousel">
-        <el-carousel trigger="click" :height="height" :autoplay="false" :loop="false">
-      <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl" >
-       <img :src="imgUrl" alt="" ref="img"/>
-      </el-carousel-item>
-    </el-carousel>
+      <el-carousel
+        trigger="click"
+        :height="height"
+        :autoplay="false"
+        :loop="false"
+      >
+        <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl">
+          <img :src="imgUrl" alt="" ref="img" />
+        </el-carousel-item>
+      </el-carousel>
     </div>
-      <!-- <img :src="stay.imgUrls[0]" alt="" /> -->
-      <section class="preview-text">
-        <div class="preview-rate">
-          <p v-if="stay.reviews.length"><span class="star"><i class='fas fa-star' style='font-size:12.5px; color:rgb(255, 55, 92)'></i></span><strong> {{avgRate}}</strong><span> ({{stay.reviews.length}} reviews) </span></p>
-          <p v-else-if="stay.reviews.length < 3">❤ {{stay.reviews.length}} reviews</p>
-          <!-- <p v-else-if="newStay&&!stay.reviews.length">⭐ New</p> -->
-          <p v-else >No reviews yet</p>
-        </div>
-        <div class="preview-details">
-        <p>{{ stay.type }} • {{stay.loc.city}}<br>
-        {{ stay.name }}<br>
-        <strong>${{ stay.price }}</strong> / night</p>
-        <!-- <p v-if="filterby.dates">{{totalPrice}}</p> -->    
-        <!-- <p v-if="filterby.dates">{{dates}}</p> -->  
-        </div>
-      </section>  
+    <section class="preview-text">
+      <div class="preview-rate">
+        <p v-if="stay.reviews.length">
+          <span class="star"
+            ><i
+              class="fas fa-star"
+              style="font-size: 12.5px; color: rgb(255, 55, 92)"
+            ></i></span
+          ><strong> {{ avgRate }}</strong
+          ><span> ({{ stay.reviews.length }} reviews) </span>
+        </p>
+        <p v-else-if="stay.reviews.length < 3">
+          ❤ {{ stay.reviews.length }} reviews
+        </p>
+        <!-- <p v-else-if="newStay&&!stay.reviews.length">⭐ New</p> -->
+        <p v-else>No reviews yet</p>
+      </div>
+      <div class="preview-details">
+        <p>
+          {{ stay.type }} • {{ stay.loc.city }}<br />
+          {{ stay.name }}<br />
+          <strong>${{ stay.price }}</strong> / night
+        </p>
+        <!-- <p v-if="filterby.dates">{{totalPrice}}</p> -->
+        <!-- <p v-if="filterby.dates">{{dates}}</p> -->
+      </div>
     </section>
+  </section>
 </template>
 
 <script>
 export default {
   name: "stay-preview",
   props: {
-    stay: Object
+    stay: Object,
   },
   data() {
     return {
@@ -39,24 +55,29 @@ export default {
       currStay: this.stay,
       isWide: true,
       // isMid: false,
-      isNarrow: true
-    }
+      isNarrow: true,
+    };
   },
   created() {
-      this.$store.commit({ type: "setCurrStay", stay: this.currStay });
-      this.avgRate = this.$store.getters.avgStayRate;
-      window.matchMedia('(min-width: 750px)').addEventListener('change', this.handleWide);
-      // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
-      window.matchMedia('(max-width: 425px)').addEventListener('change', this.handleWide);
-      window.matchMedia('(min-width: 425px)').addEventListener('change', this.handleNarrow);
-      // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
-      // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
-      window.matchMedia('(max-width: 750px)').addEventListener('change', this.handleNarrow);
-
+    this.$store.commit({ type: "setCurrStay", stay: this.currStay });
+    this.avgRate = this.$store.getters.avgStayRate;
+    window
+      .matchMedia("(min-width: 750px)")
+      .addEventListener("change", this.handleWide);
+    // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
+    window
+      .matchMedia("(max-width: 425px)")
+      .addEventListener("change", this.handleWide);
+    window
+      .matchMedia("(min-width: 425px)")
+      .addEventListener("change", this.handleNarrow);
+    // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
+    // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
+    window
+      .matchMedia("(max-width: 750px)")
+      .addEventListener("change", this.handleNarrow);
   },
-  mounted() {
-
-  },
+  mounted() {},
   methods: {
     handleWide(mql) {
       if (mql.matches) this.isWide = true;
@@ -69,32 +90,24 @@ export default {
     handleNarrow(mql) {
       if (mql.matches) this.isNarrow = true;
       else this.isNarrow = false;
-    }
+    },
   },
   computed: {
     height() {
-<<<<<<< HEAD
-=======
       // console.log('wide', this.isWide)
       // console.log('mid', this.isMid)
       // console.log('narrow', this.isNarrow)
 
->>>>>>> 098f5d40504ba2123149434d66e5b3ab0560b817
       if (this.isWide) return "190px";
       // else if (this.isMid) return "210px";
       else if (this.isNarrow) return "300px";
-
-
-    }
+    },
+    // fullPricePerNight() {
+    //   return this.$store.getters.fullPricePerNight
+    // }
   },
-  watch: {
-
-  }
-
-
-}
-
+  watch: {},
+};
 </script>
 <style>
-
 </style>

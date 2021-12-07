@@ -17,13 +17,16 @@ export const orderStore = {
         },
         trip(state) {
             return state.currTrip;
+        },
+        nights(state) {
+            if (state.currTrip.nights) return state.currTrip.nights;
+            else return 0;
         }
     },
     mutations: {
          setOrder(state, { order }) {
             state.currOrder = order;
             state.currTrip = {};
-            console.log('trip', state.currTrip)
             console.log('order', state.currOrder)
         },
         setCurrOrder(state, { order }) {

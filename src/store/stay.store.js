@@ -7,9 +7,10 @@ export const stayStore = {
         stays: [],
         currStayReviews: [],
         filterBy: { type: '', city: '', price: '' },
+        currPrice: {}
     },
     getters: {
-        showCurrStay(state) {
+        currStay(state) {
             return state.currStay;
         },
         stays(state) {
@@ -31,31 +32,50 @@ export const stayStore = {
         },
         isLoading({ isLoading }) {
             return isLoading
-          },
+        },
+        currPrice(state) {
+            return state.currPrice;
+        },
+        totalPriceNoFees(state, getters) {
+          return state.currPrice.pricePerNight * getters.nights;
+        },
+        totalPrice(state, getters) {
+            return getters.totalPriceNoFees + state.currPrice.cleaningFee + state.currPrice.serviceFee;
+        },
+        // fullPricePerNight(state, getters) {
+        //     return (getters.totalPrice / getters.nights);
+        // }
     },
     actions: {
         loadStays({ commit, state }) {
-          var filterBy = state.filterBy ? state.filterBy : ''
-          commit({ type: 'setLoading', isLoading: true })
-          staysService
-            .query(filterBy)
-            .then((stays) => {
-              commit({ type: 'setStays', stays })
-            })
-            .finally(() => {
-              commit({ type: 'setLoading', isLoading: false })
-            })
+            var filterBy = state.filterBy ? state.filterBy : ''
+            commit({ type: 'setLoading', isLoading: true })
+            staysService
+                .query(filterBy)
+                .then((stays) => {
+                    commit({ type: 'setStays', stays })
+                })
+                .finally(() => {
+                    commit({ type: 'setLoading', isLoading: false })
+                })
         },
     },
     mutations: {
         setLoading(state, { isLoading }) {
             state.isLoading = isLoading
-          },
+        },
         setStays(state, { stays }) {
             state.stays = stays;
         },
         setCurrStay(state, { stay }) {
             state.currStay = stay;
+        },
+        setPrice(state, { stay }) {
+            state.currPrice = {
+                pricePerNight: stay.price,
+                cleaningFee: 15,
+                serviceFee: 25
+            }
         },
 
         addStay(state, { stay }) {
@@ -69,11 +89,11 @@ export const stayStore = {
         },
         setFilter(state, { filterBy }) {
             state.filterBy.type = filterBy.type;
-            if (filterBy.type==='city') state.filterBy.city = filterBy.filter;
-            else if (filterBy.type==='type') state.filterBy.type = filterBy.filter;
-            else if (filterBy.type==='price') state.filterBy.price = filterBy.filter;
+            if (filterBy.type === 'city') state.filterBy.city = filterBy.filter;
+            else if (filterBy.type === 'type') state.filterBy.type = filterBy.filter;
+            else if (filterBy.type === 'price') state.filterBy.price = filterBy.filter;
             console.log(state.filterBy);
-          },
+        },
     },
     actions: {
         async addStay(context, { stay }) {
@@ -93,6 +113,7 @@ export const stayStore = {
                 const stay = await stayService.getById(stayId);
                 // console.log(stay);
                 context.commit({ type: 'setCurrStay', stay });
+                context.commit({ type: 'setPrice', stay });
                 // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
                 // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
                 // //     console.log('Got stay from socket', stay);
@@ -130,6 +151,6 @@ export const stayStore = {
             console.log(filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
-          },
+        },
     },
 };

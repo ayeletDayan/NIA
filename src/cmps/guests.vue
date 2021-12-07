@@ -21,24 +21,24 @@
       </div>
       <div class="guests-btns">
         <div>
-          <button class="guests-btn" @click="addAdults">+</button>
+          <button type="button" class="guests-btn" @click="addAdults">+</button>
           <span class="quantity">{{ quantityAdults }}</span>
-          <button class="guests-btn" @click="reduceAdults">-</button>
+          <button type="button" class="guests-btn" @click="reduceAdults">-</button>
         </div>
         <div>
-          <button class="guests-btn" @click="addChildren">+</button>
+          <button type="button" class="guests-btn" @click="addChildren">+</button>
           <span class="quantity">{{ quantityChildren }}</span>
-          <button class="guests-btn" @click="reduceChildren">-</button>
+          <button type="button" class="guests-btn" @click="reduceChildren">-</button>
         </div>
         <div>
-          <button class="guests-btn" @click="addInfants">+</button>
+          <button type="button" class="guests-btn" @click="addInfants">+</button>
           <span class="quantity">{{ quantityInfants }}</span>
-          <button class="guests-btn" @click="reduceInfants">-</button>
+          <button type="button" class="guests-btn" @click="reduceInfants">-</button>
         </div>
         <div>
-          <button class="guests-btn" @click="addPets">+</button>
+          <button type="button" class="guests-btn" @click="addPets">+</button>
           <span class="quantity">{{ quantityPets }}</span>
-          <button class="guests-btn" @click="reducePets">-</button>
+          <button type="button" class="guests-btn" @click="reducePets">-</button>
         </div>
       </div>
       <div></div>
