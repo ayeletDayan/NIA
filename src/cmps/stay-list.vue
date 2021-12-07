@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     goToDetails(stayId) {
-      this.$router.push('/stay/' + stayId);
+      console.log(stayId);
+      this.$router.push('/stay/' + stayId); 
     }
   },
   computed:{
