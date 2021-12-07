@@ -6,8 +6,8 @@ export const stayStore = {
         currStay: null,
         stays: [],
         currStayReviews: [],
-        filterBy: { type: '', city: '', price: '' },
-        currPrice: {}
+        currPrice: {},
+        filterBy: { type: '', city: '', price: '' }, //minPrice: '', maxPrice: ''
     },
     getters: {
         currStay(state) {
@@ -60,6 +60,7 @@ export const stayStore = {
                 })
         },
     },
+
     mutations: {
         setLoading(state, { isLoading }) {
             state.isLoading = isLoading
@@ -88,12 +89,15 @@ export const stayStore = {
             state.currStayReviews = stay.reviews;
         },
         setFilter(state, { filterBy }) {
-            state.filterBy.type = filterBy.type;
-            if (filterBy.type === 'city') state.filterBy.city = filterBy.filter;
-            else if (filterBy.type === 'type') state.filterBy.type = filterBy.filter;
-            else if (filterBy.type === 'price') state.filterBy.price = filterBy.filter;
+            console.log(filterBy);
+            if (filterBy.filterType === 'city') state.filterBy.city = filterBy.filter;
+            else if (filterBy.filterType === 'type') state.filterBy.type = filterBy.filter;
+            else if (filterBy.filterType === 'price') state.filterBy.price = filterBy.filter;
             console.log(state.filterBy);
         },
+        clearFilter(state) {
+            state.filterBy = { type: '', city: '', price: '' }
+        }
     },
     actions: {
         async addStay(context, { stay }) {
@@ -129,9 +133,10 @@ export const stayStore = {
                 throw err;
             }
         },
-        async loadStays(context, { filterBy }) {
+        async loadStays(context) {
+            console.log(context.state.filterBy);
             try {
-                const stays = await stayService.query(filterBy);
+                const stays = await stayService.query(context.state.filterBy);
                 context.commit({ type: 'setStays', stays });
             } catch (err) {
                 console.log('stayStore: Error in loadStays', err);
@@ -152,5 +157,9 @@ export const stayStore = {
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },
+        clearFilter({ commit, dispatch }) {
+            commit({ type: 'clearFilter' })
+            dispatch({ type: 'loadStays' })
+        }
     },
 };

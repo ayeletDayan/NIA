@@ -97,7 +97,7 @@ export default {
       this.nights = (this.endDate - this.startDate) / (1000 * 3600 * 24);
     },
     totalPers(total) {
-      this.addGuests = total.totalPers + " + " + total.pets + " pets";
+      this.addGuests = total.totalPers + " guests + " + total.pets + " pets";
       this.persons = total.totalPers;
       this.pets = total.pets;
     },
