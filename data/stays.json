@@ -14,7 +14,7 @@
         "price": 80,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area.",
         "capacity": 8,
-        "and": 2,
+        "bedroom": 2,
         "beds": 4,
         "bath": 1,
         "amenities": ["TV", "Wifi", "Kitchen", "Pets allowed"],

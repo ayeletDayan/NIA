@@ -46,8 +46,9 @@
           <h2 class="big-font">{{ stay.summary }}</h2>
         </div>
         <div>
-          <span>{{ stay.capacity }} guests</span><span class="dote"> · </span><span> 2 bedrooms</span
-          ><span class="dote"> · </span><span> 4 beds</span>
+          <span>{{ stay.capacity }} guests</span><span class="dote"> · </span><span> {{ stay.bedroom }} bedrooms</span
+          ><span class="dote"> · </span><span> {{ stay.bed }} beds</span><span class="dote"> · </span><span> {{ stay.bath }} bath</span
+          >
         </div>
 
         <hr />
