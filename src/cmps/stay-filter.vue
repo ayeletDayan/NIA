@@ -112,8 +112,6 @@ export default {
       this.searchData.persons = this.persons;
       this.searchData.pets = this.pets;
       console.log("searchData:", this.searchData);
-      
-      //naama-06.12 saving to store to use in the order
       this.$store.commit({type: 'setCurrTrip', trip: this.searchData})
 
     },

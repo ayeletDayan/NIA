@@ -150,7 +150,9 @@ export default {
       isScroll: false,
     };
   },
-  created() {
+  created() { 
+    console.log('clear filter');
+    this.$store.dispatch({ type: "clearFilter"});   
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
@@ -163,9 +165,8 @@ export default {
     goToDetails(stayId) {
       this.$router.push("/stay/" + stayId);
     },
-    goToStays(type, filter){
-      // console.log("filterBy:", type, "filter:", filter);
-      const filterBy = {type: type, filter: filter}
+    goToStays(filterType, filter){
+      const filterBy = {filterType: filterType, filter: filter}
       this.$store.dispatch({ type: "setFilter", filterBy});
       this.$router.push("/stay/");
     }

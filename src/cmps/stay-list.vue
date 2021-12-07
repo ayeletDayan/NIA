@@ -15,23 +15,20 @@ import stayPreview from "../cmps/stay-preview.vue";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     goToDetails(stayId) {
-      this.$router.push('/stay/' + stayId);
-    }
+      this.$router.push("/stay/" + stayId);
+    },
   },
-  computed:{
+  computed: {
     staysToShow() {
-      // console.log(this.$store.getters.stays)
       return this.$store.getters.stays;
-    }
+    },
   },
   components: {
-    stayPreview
+    stayPreview,
   },
 };
-
 </script>

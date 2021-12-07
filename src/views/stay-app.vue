@@ -1,6 +1,7 @@
 <template>
 <div>
-  <p v-if="isLoading">Loading...</p>
+    <price-filter/>
+    <p v-if="isLoading">Loading...</p>
     <stay-list></stay-list>
 </div>
   
@@ -8,11 +9,13 @@
 
 <script>
 import stayList from '@/cmps/stay-list';
+import PriceFilter from '../cmps/price-filter.vue';
 export default {
     name: "stay",
 
     components: {
-    stayList
+    stayList,
+    PriceFilter        
   },
    computed: {
      isLoading() {
