@@ -12,7 +12,22 @@
           <div class="logo-txt">niabnb</div>
         </router-link>
 
-        <div class="small-filter" v-if="isSmallFilter" :style="smallFilter" @click="isSmallFilter = !isSmallFilter"><span class="small-filter-txt">Start your search</span><button class="small-filter-explore"><i class="fas fa-search"></i></button>
+        <div
+          class="small-filter"
+          v-if="isSmallFilter"
+          :style="smallFilter"
+          @click="isSmallFilter = !isSmallFilter"
+        >
+          <span class="small-filter-txt">{{ searchLocation }}</span>
+          <span :style="isTrip" class="small-filter-txt">{{
+            searchDates
+          }}</span>
+          <span :style="isTrip" class="small-filter-txt">{{
+            searchGuests
+          }}</span>
+          <button class="small-filter-explore">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
 
         <div class="header-right">
@@ -54,6 +69,8 @@ export default {
       isScroll: false,
       isMenuOpen: false,
       isSmallFilter: false,
+      trip: null,
+      isTripSet: false,
     };
   },
   components: {
@@ -69,7 +86,7 @@ export default {
   methods: {
     handleScroll(event) {
       this.isScroll = window.scrollY !== 0 ? true : false;
-      this.isSmallFilter = !this.home || this.isScroll ? true : false;      
+      this.isSmallFilter = !this.home || this.isScroll ? true : false;
     },
   },
 
@@ -98,6 +115,25 @@ export default {
     },
     smallFilter() {
       return this.isSmallFilter ? "display: block;" : "display: none;";
+    },
+    searchLocation() {
+      this.trip = this.$store.getters.trip;
+      this.isTripSet = this.trip.location ? true : false;
+      console.log(this.trip);
+      return this.isTripSet ? this.trip.location : "Start your search";
+    },
+    searchDates() {
+      return this.trip.startDate
+        ? this.trip.startDate + " - " + this.trip.endDate
+        : "Dates";
+    },
+    searchGuests() {
+      return this.trip.persons
+        ? this.trip.persons + " guests " : "Guests";
+    },
+    isTrip() {
+      console.log(this.isTripSet);
+      return this.isTripSet ? "" : "display: none;";
     },
   },
 };

@@ -135,7 +135,6 @@
 
       <div class="questions-about-hosting-container">
         <router-link to="/stay/edit/:id">
-          <span class="questions-about-hosting">Questions about hosting?</span>
           <img src="../assets/img/host-home.jpg" alt=""
         /></router-link>
       </div>
