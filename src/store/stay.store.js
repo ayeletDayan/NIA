@@ -33,20 +33,7 @@ export const stayStore = {
             return isLoading
         },
     },
-    actions: {
-        loadStays({ commit, state }) {
-            var filterBy = state.filterBy ? state.filterBy : ''
-            commit({ type: 'setLoading', isLoading: true })
-            staysService
-                .query(filterBy)
-                .then((stays) => {
-                    commit({ type: 'setStays', stays })
-                })
-                .finally(() => {
-                    commit({ type: 'setLoading', isLoading: false })
-                })
-        },
-    },
+
     mutations: {
         setLoading(state, { isLoading }) {
             state.isLoading = isLoading
