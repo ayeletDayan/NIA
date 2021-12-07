@@ -7,7 +7,7 @@
     justify-content: center;
     margin: 30px 0;
     // padding: 10px;
-    margin-top: 220px;
+    margin-top: 150px;
 
     img {
             max-width: 100%;
@@ -94,8 +94,9 @@
         color:$clr4; //rgb(113, 113, 113)
     }
     .star {
-        color: #FF385C; //rgb(255, 56, 92)
-        font-size: 14px;
+        // color: #FF385C; //rgb(255, 56, 92)
+        // font-size: 14px;
+        padding-right: 3px;
 
      }
 }

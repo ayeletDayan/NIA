@@ -15,6 +15,7 @@ import userMsg from './cmps/user-msg'
 export default {
     created() {
     this.$store.dispatch({ type: "loadStays" });
+    this.$store.dispatch({ type: "loadUsers" });
   },
   components: {
     appHeader,

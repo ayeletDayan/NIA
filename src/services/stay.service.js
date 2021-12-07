@@ -12,7 +12,7 @@ export const stayService = {
     getById,
 };
 
-function query() {
+function query(filterBy) {
     return storageService.query(STAY_KEY);
 }
 

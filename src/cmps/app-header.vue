@@ -12,11 +12,22 @@
           <div class="logo-txt">niabnb</div>
         </router-link>
 
-        <div :style="smallFilter" class="small-filter" @click="onSmallFilter">
-          <span class="small-filter-txt">Start your search</span>
-            <button class="small-filter-explore">
-              <a href="#/explore"><i class="fas fa-search"></i></a>
-            </button>
+        <div
+          class="small-filter"
+          v-if="isSmallFilter"
+          :style="smallFilter"
+          @click="isSmallFilter = !isSmallFilter"
+        >
+          <span class="small-filter-txt">{{ searchLocation }}</span>
+          <span :style="isTrip" class="small-filter-txt">{{
+            searchDates
+          }}</span>
+          <span :style="isTrip" class="small-filter-txt">{{
+            searchGuests
+          }}</span>
+          <button class="small-filter-explore">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
 
         <div class="header-right">
@@ -26,42 +37,45 @@
           <router-link class="hover" :style="routerClr" to="/stay/edit/:id"
             >Become a Host</router-link
           >
-          <router-link to="/login">
-            <div class="login-btn">
-              <div class="bar">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </div>
-              <div class="user-img">
-                <img
-                  src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
-                  alt=""
-                />
-              </div>
+          <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
+            <div class="bar">
+              <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
-          </router-link>
+            <div class="user-img">
+              <img
+                src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <login-menu v-if="isMenuOpen" />
+            </div>
+          </div>
         </div>
       </nav>
-      <section class="loggedin-user" v-if="loggedInUser">
-        <router-link :to="`/user/${loggedInUser._id}`">
-          {{ loggedInUser.fullname }}
-        </router-link>
-        <span>{{ loggedInUser.score }}</span>
-      </section>
-      <div :style="scroll"><stay-filter key="filter" /></div>
+      <div v-if="!isSmallFilter" :style="bigFilter">
+        <stay-filter key="filter" />
+      </div>
     </div>
   </header>
 </template>
 <script>
-import stayFilter from "./stay-filter";
+import stayFilter from "./stay-filter.vue";
+import loginMenu from "./login-menu.vue";
 export default {
   data() {
     return {
       home: null,
       isScroll: false,
+      isMenuOpen: false,
+      isSmallFilter: false,
+      trip: null,
+      isTripSet: false,
     };
   },
   components: {
     stayFilter,
+    loginMenu,
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -72,23 +86,20 @@ export default {
   methods: {
     handleScroll(event) {
       this.isScroll = window.scrollY !== 0 ? true : false;
+      this.isSmallFilter = !this.home || this.isScroll ? true : false;
     },
-    onSmallFilter(){
-      this.isScroll = !this.isScroll
-    }
   },
+
   watch: {
     "$route.name": {
       handler() {
         this.home = this.$route.name === "home" ? true : false;
+        this.isSmallFilter = this.home ? false : true;
       },
       immediate: true,
     },
   },
   computed: {
-    loggedInUser() {
-      return this.$store.getters.loggedinUser;
-    },
     bgc() {
       return this.$route.name !== "home" || this.isScroll
         ? "background-color: #fff; color: rgb(255, 55, 92)"
@@ -99,11 +110,30 @@ export default {
         ? "color: #000000"
         : "color: #fff";
     },
-    scroll() {
-      return this.isScroll ? "display: none;" : "display: block;";
+    bigFilter() {
+      return !this.isSmallFilter ? "display: block;" : "display: none;";
     },
     smallFilter() {
-      return this.isScroll ? "display: block;" : "display: none;";
+      return this.isSmallFilter ? "display: block;" : "display: none;";
+    },
+    searchLocation() {
+      this.trip = this.$store.getters.trip;
+      this.isTripSet = this.trip.location ? true : false;
+      console.log(this.trip);
+      return this.isTripSet ? this.trip.location : "Start your search";
+    },
+    searchDates() {
+      return this.trip.startDate
+        ? this.trip.startDate + " - " + this.trip.endDate
+        : "Dates";
+    },
+    searchGuests() {
+      return this.trip.persons
+        ? this.trip.persons + " guests " : "Guests";
+    },
+    isTrip() {
+      console.log(this.isTripSet);
+      return this.isTripSet ? "" : "display: none;";
     },
   },
 };

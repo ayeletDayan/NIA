@@ -59,7 +59,7 @@
           />
         </div>
       </div>
-      <div hidden>order box</div>
+      <stay-order-form :stayId="stay._id"></stay-order-form>
     </section>
     <hr />
     <stay-review
@@ -94,6 +94,7 @@
 <script>
 import stayAmenity from "@/cmps/stay-amenity";
 import stayReview from "@/cmps/stay-review";
+import stayOrderForm from "@/cmps/stay-order-form";
 export default {
   data() {
     return {
@@ -138,6 +139,7 @@ export default {
   components: {
     stayAmenity,
     stayReview,
+    stayOrderForm
   },
 };
 
