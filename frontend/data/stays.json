@@ -1,7 +1,5 @@
 [
     {
-        "_id": "s101",
-        "createdAt": 20180203073000,
         "name": "Charming Duplex",
         "type": "Apartment",
         "imgUrls": [
@@ -149,8 +147,7 @@
         ]
     },
     {
-        "_id": "s102",
-        "createdAt": 20180203073000,
+
         "name": "Light and Airy Bedroom in Camden",
         "type": "Apartment",
         "imgUrls": [
@@ -298,8 +295,7 @@
         ]
     },
     {
-        "_id": "s103",
-        "createdAt": 20180203073000,
+
         "name": "Great and Cosy London Studio Flat",
         "type": "Apartment",
         "imgUrls": [
@@ -447,8 +443,7 @@
         ]
     },
     {
-        "_id": "s104",
-        "createdAt": 20180203073000,
+
         "name": "London Bridge",
         "type": "Apartment",
         "imgUrls": [
@@ -596,8 +591,7 @@
         ]
     },
     {
-        "_id": "s105",
-        "createdAt": 20180203072000,
+
         "name": "Boutique studio in downtown",
         "type": "Apartment",
         "imgUrls": [
@@ -745,8 +739,7 @@
         ]
     },
     {
-        "_id": "s106",
-        "createdAt": 20180203072000,
+
         "name": "Buda Castle",
         "type": "castle",
         "imgUrls": [
@@ -894,8 +887,7 @@
         ]
     },
     {
-        "_id": "s107",
-        "createdAt": 20180203072000,
+
         "name": "Koko Castle",
         "type": "castle",
         "imgUrls": [
@@ -1043,8 +1035,7 @@
         ]
     },
     {
-        "_id": "s108",
-        "createdAt": 20180203072000,
+
         "name": "Dodo Castle",
         "type": "castle",
         "imgUrls": [
@@ -1192,8 +1183,7 @@
         ]
     },
     {
-        "_id": "s109",
-        "createdAt": 20180203072000,
+
         "name": "Buda Boat",
         "type": "houseboat",
         "imgUrls": [
@@ -1341,8 +1331,7 @@
         ]
     },
     {
-        "_id": "s110",
-        "createdAt": 20180203072000,
+
         "name": "Beautiful Paris",
         "type": "Apartment",
         "imgUrls": [
@@ -1496,8 +1485,7 @@
         ]
     },
     {
-        "_id": "s111",
-        "createdAt": 20180203072000,
+
         "name": "Holiday Castle",
         "type": "castle",
         "imgUrl": [
@@ -1651,8 +1639,7 @@
         ]
     },
     {
-        "_id": "s112",
-        "createdAt": 20180203072000,
+
         "name": "Mudy Castle",
         "type": "castle",
         "imgUrls": [
@@ -1800,8 +1787,7 @@
         ]
     },
     {
-        "_id": "s113",
-        "createdAt": 20180203072000,
+ 
         "name": "Life in Paris",
         "type": "Apartment",
         "imgUrls": [
@@ -1955,8 +1941,7 @@
         ]
     },
     {
-        "_id": "s114",
-        "createdAt": 20180203072000,
+
         "name": "Life in New York",
         "type": "Apartment",
         "imgUrls": [
@@ -2104,8 +2089,7 @@
         ]
     },
     {
-        "_id": "s115",
-        "createdAt": 20180203072000,
+
         "name": "My Quiet Place",
         "type": "Apartment",
         "imgUrls": [
@@ -2253,8 +2237,7 @@
         ]
     },
     {
-        "_id": "s116",
-        "createdAt": 20180203072000,
+
         "name": "Life-style in New York",
         "type": "Entire luxe unit",
         "imgUrls": [
@@ -2402,8 +2385,7 @@
         ]
     },
     {
-        "_id": "s117",
-        "createdAt": 20180203072000,
+
         "name": "New York Castle",
         "type": "castle",
         "imgUrls": [
@@ -2551,8 +2533,7 @@
         ]
     },
     {
-        "_id": "s118",
-        "createdAt": 20180203080000,
+ 
         "name": "Holy City",
         "type": "castle",
         "imgUrls": [
@@ -2700,8 +2681,7 @@
         ]
     },
     {
-        "_id": "s119",
-        "createdAt": 20180203080000,
+
         "name": "Palace of David",
         "type": "Luxe",
         "imgUrls": [
@@ -2849,8 +2829,7 @@
         ]
     },
     {
-        "_id": "s120",
-        "createdAt": 20180203080000,
+
         "name": "Palace of Solomon",
         "type": "Luxe",
         "imgUrls": [
@@ -2998,8 +2977,7 @@
         ]
     },
     {
-        "_id": "s121",
-        "createdAt": 20180203080000,
+
         "name": "Life in the Holy City",
         "type": "Apartment",
         "imgUrls": [

@@ -6,8 +6,8 @@ export const stayStore = {
         currStay: null,
         stays: [],
         currStayReviews: [],
+        filterBy: { type: '', city: '', price: '' },
         currPrice: {},
-        filterBy: { type: '', city: '', price: '' }, //minPrice: '', maxPrice: ''
     },
     getters: {
         currStay(state) {
@@ -89,11 +89,7 @@ export const stayStore = {
             state.currStayReviews = stay.reviews;
         },
         setFilter(state, { filterBy }) {
-            console.log(filterBy);
-            if (filterBy.filterType === 'city') state.filterBy.city = filterBy.filter;
-            else if (filterBy.filterType === 'type') state.filterBy.type = filterBy.filter;
-            else if (filterBy.filterType === 'price') state.filterBy.price = filterBy.filter;
-            console.log(state.filterBy);
+            state.filterBy[filterBy.filterType] = filterBy.filter;
         },
         clearFilter(state) {
             state.filterBy = { type: '', city: '', price: '' }

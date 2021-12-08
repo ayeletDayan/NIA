@@ -1,7 +1,33 @@
 @media (max-width: 740px){
     .small-filter *, .small-filter-txt {
         display: none;  
-    }       
+    }
+    
+    .mobile-small-filter{
+        display: block;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: $clr1;
+        opacity: 2;
+        margin-top: 5px; 
+        a.fa-search{
+            color: $clr6;
+            font-size: 14px;
+            font-weight: 400;
+            color: $clr6;
+        }
+        .fa-search:before{
+            color: $clr6;            
+        }
+        .fa-search:before{
+            cursor: pointer;           
+        }
+
+    }
+
     .max-filter{
         width: 200px;
         background-color: $clr6;     
@@ -16,7 +42,11 @@
         border: 1px solid $clr3;
         box-shadow: 0.5px 0.5px 0.5px $clr3;
         padding-top: 6px;
-        padding-bottom: 0;
+        z-index: 100;        
+    }
+
+    .max-filter *{
+        z-index: 100;
     }
     
     .filter-hover{
@@ -24,6 +54,7 @@
         text-align: left;
         font-size: 12px;
         gap: 1rem;
+        z-index: 100;
     
         .filter-input, .mx-input{
             font-size: 11px;
@@ -66,7 +97,7 @@
             color: $clr6;
             font-size: 16px;
             font-weight: 600;
-        }        
+        }
     }
     
     .filter-title{
@@ -96,6 +127,10 @@
     }
 
 @media (min-width: 740px) and (max-width: 960px){
+    .mobile-small-filter{
+        display: none;
+
+    }
 .small-filter {
     display: flex;
     flex-direction: row;
