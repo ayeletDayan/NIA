@@ -1,58 +1,63 @@
 <template>
-  <div class="max-filter">
-    <div class="filter-hover filter-location">
-      <div @click="isOnLocation = !isOnLocation" class="filter-title">
-        Location
-      </div>
-      <div @click="isOnLocation = !isOnLocation" class="filter-input">
-        {{ selectedLocation }}
-      </div>
-    </div>
-    <div class="filter-space"></div>
-    <div class="filter-hover filter-check-in">
-      <div @click="datePicker = !datePicker" class="filter-title">Check in</div>
-      <div class="filter-input">
-        <date-picker @startDate="addStartDate"></date-picker>
-      </div>
-    </div>
-    <div class="filter-space"></div>
-    <div class="filter-hover filter-check-out">
-      <div @click="datePicker = !datePicker" class="filter-title">
-        Check out
-      </div>
-      <div class="filter-input">
-        <date-picker @endDate="addEndDate" />
-      </div>
-    </div>
-    <div class="filter-space"></div>
-    <div class="filter-hover filter-guests">
-      <div>
-        <div @click="isOnGuests = !isOnGuests" class="filter-title">Guests</div>
-        <div @click="isOnGuests = !isOnGuests" class="filter-input">
-          {{ addGuests }}
+    <div class="max-filter">
+      <div class="filter-hover filter-location">
+        <div @click="isOnLocation = !isOnLocation" class="filter-title">
+          Location
+        </div>
+        <div @click="isOnLocation = !isOnLocation" class="filter-input">
+          {{ selectedLocation }}
         </div>
       </div>
-      <div class="search-btn-container">
-        <router-link to="/stay">
-          <button @click="search" class="filter-explore">
-            <a href="#/explore"><i class="fas fa-search"></i></a>
-          </button>
-        </router-link>
+      <div class="filter-space"></div>
+      <div class="filter-hover filter-check-in">
+        <div @click="datePicker = !datePicker" class="filter-title">
+          Check in
+        </div>
+        <div class="filter-input">
+          <date-picker @startDate="addStartDate"></date-picker>
+        </div>
+      </div>
+      <div class="filter-space"></div>
+      <div class="filter-hover filter-check-out">
+        <div @click="datePicker = !datePicker" class="filter-title">
+          Check out
+        </div>
+        <div class="filter-input">
+          <date-picker @endDate="addEndDate" />
+        </div>
+      </div>
+      <div class="filter-space"></div>
+      <div class="filter-hover filter-guests">
+        <div>
+          <div @click="isOnGuests = !isOnGuests" class="filter-title">
+            Guests
+          </div>
+          <div @click="isOnGuests = !isOnGuests" class="filter-input">
+            {{ addGuests }}
+          </div>
+        </div>
+        <div class="search-btn-container">
+          <router-link to="/stay">
+            <button @click="search" class="filter-explore">
+              <a href="#/explore"><i class="fas fa-search"></i></a>
+            </button>
+          </router-link>
+        </div>
+      </div>
+      <div v-if="isOnLocation">
+        <location @selectedCity="selectedCity" />
+      </div>
+
+      <div class="guests" v-if="isOnGuests">
+        <guests @totalPers="totalPers" />
       </div>
     </div>
-    <div v-if="isOnLocation">
-      <location @selectedCity="selectedCity" />
-    </div>
-
-    <div class="guests" v-if="isOnGuests">
-      <guests @totalPers="totalPers" />
-    </div>
-  </div>
 </template>
 <script>
 import datePicker from "./date-picker.vue";
 import location from "./location.vue";
 import guests from "./guests.vue";
+import { storageService } from "../services/async-storage.service.js";
 
 export default {
   data() {
@@ -106,15 +111,14 @@ export default {
       this.searchData.nights = this.nights;
       this.searchData.persons = this.persons;
       this.searchData.pets = this.pets;
-      console.log("searchData:", this.searchData);
-      if (this.searchData.location) {
-        const filterBy = { filterType: 'city', filter: this.searchData.location };
-        this.$store.dispatch({ type: "setFilter", filterBy });
-      }
-      this.$store.commit({ type: "setCurrTrip", trip: this.searchData });
+
+      const filterBy = {filterType: "city", filter: this.searchData.location}
+      this.$store.dispatch({ type: "setFilter", filterBy});
+
+      this.$store.commit({type: 'setCurrTrip', trip: this.searchData})
 
     },
-  },
+  }
 };
 </script>
 
