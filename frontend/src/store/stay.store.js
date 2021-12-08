@@ -28,7 +28,7 @@ export const stayStore = {
                 sum += review.rate;
                 return sum;
             }, 0);
-            return sum / reviews.length;
+            return (sum / reviews.length).toFixed(2);
         },
         isLoading({ isLoading }) {
             return isLoading

@@ -5,7 +5,8 @@ export const userService = {
     login,
     logout,
     signup,
-    getLoggedinUser
+    getLoggedinUser,
+    getUsers
 }
 
 function getUsers() {
