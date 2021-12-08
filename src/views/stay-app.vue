@@ -1,27 +1,32 @@
 <template>
-<div>
-    <price-filter/>
+  <div>
+    <div class="onPriceFilter-btn" @click="onPriceFilter = !onPriceFilter">Price</div>
+    <div v-if="onPriceFilter">
+      <price-filter />
+    </div>
     <p v-if="isLoading">Loading...</p>
     <stay-list></stay-list>
-</div>
-  
+  </div>
 </template>
 
 <script>
-import stayList from '@/cmps/stay-list';
-import PriceFilter from '../cmps/price-filter.vue';
+import stayList from "@/cmps/stay-list";
+import PriceFilter from "../cmps/price-filter.vue";
 export default {
-    name: "stay",
-
-    components: {
-    stayList,
-    PriceFilter        
+  name: "stay",
+  data() {
+    return {
+      onPriceFilter: false,
+    };
   },
-   computed: {
-     isLoading() {
+  components: {
+    stayList,
+    PriceFilter,
+  },
+  computed: {
+    isLoading() {
       return this.$store.getters.isLoading;
     },
   },
-
-}
+};
 </script>

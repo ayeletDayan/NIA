@@ -1,21 +1,5 @@
 <template>
   <div class="price-filter-container">
-    <div>
-      <input
-        @input="filterByPrice"
-        type="number"
-        v-model="price.minPrice"
-        placeholder="min price"
-      />
-    </div>
-    <div>
-      <input
-        @input="filterByPrice"
-        type="number"
-        v-model="price.maxPrice"
-        placeholder="max price"
-      />
-    </div>
     <HistogramSlider
       primaryColor="#717171"
       labelColor="none"
@@ -34,6 +18,26 @@
       :data="data" 
       @change="getPrice"     
     />
+    <div class="price-min-max-container">
+        <div>
+            <span>min price</span>
+      <input
+        @input="filterByPrice"
+        type="number"
+        v-model="price.minPrice"
+        placeholder="min price"
+      />
+    </div>
+    <div>
+        <span>max price</span>
+      <input
+        @input="filterByPrice"
+        type="number"
+        v-model="price.maxPrice"
+        placeholder="max price"
+      />
+    </div>
+    </div>
   </div>
 </template>
 

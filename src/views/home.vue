@@ -166,9 +166,9 @@ export default {
       this.$router.push("/stay/" + stayId);
     },
     goToStays(filterType, filter){
-      const filterBy = {filterType: filterType, filter: filter}
+      const filterBy = {filterType, filter}
       this.$store.dispatch({ type: "setFilter", filterBy});
-      this.$router.push("/stay/");
+      this.$router.push("/stay");
     }
   },
   computed: {
